@@ -12,13 +12,6 @@
         <div class="logo"> <!-- Qui inserisci il tuo logo come <img> o testo -->
             <img src="img/logo.png" alt="Logo Home Made">
         </div>
-        <div class="language-selector">
-            <select name="language" id="language">
-                <option value="it">Italiano</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-            </select>
-        </div>
     </header>
 
     <!-- Contenuto della pagina -->
@@ -28,7 +21,16 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Home Made. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="copyright">&copy; Home Made. All rights reserved.</p>
+            <div class="language-selector-footer">
+                <label for="language-footer">Lingua:</label>
+                <select name="language-footer" id="language-footer">
+                    <option value="it">Italiano</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
