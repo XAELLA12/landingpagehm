@@ -1,0 +1,52 @@
+/* Sfondo dell'intera pagina */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/marmo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Stile dell'header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.2); /* Effetto trasparenza */
+    color: #333;
+    position: sticky;
+    top: 0;
+}
+
+/* Stile della sezione logo */
+header .logo img {
+    height: 40px;
+}
+
+/* Selettore della lingua */
+.language-selector select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Stile del footer */
+footer {
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.2); /* Effetto trasparenza */
+    color: #333;
+    font-size: 14px;
+}
+
+/* Stile del contenuto principale */
+main {
+    padding: 20px;
+    flex-grow: 1;
+}
