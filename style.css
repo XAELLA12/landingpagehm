@@ -27,6 +27,89 @@ header .logo img {
     height: 40px;
 }
 
+/* Stile card  */
+.card-welcomekit {
+    width: 342px;
+    height: 380px;
+  }
+  
+  .card-welcomekit .overlap-group {
+    position: relative;
+    width: 296px;
+    height: 357px;
+    top: 11px;
+    left: 23px;
+  }
+  
+  .card-welcomekit .card-welcome-kit {
+    position: absolute;
+    width: 278px;
+    height: 357px;
+    top: 0;
+    left: 9px;
+    border-radius: 35px;
+    border: 0px solid;
+    border-color: transparent;
+    box-shadow: 0px 4px 25px #3d3c3c40;
+    backdrop-filter: blur(3px) brightness(100%);
+    -webkit-backdrop-filter: blur(3px) brightness(100%);
+    border-image: linear-gradient(
+        to bottom,
+        rgb(255, 255, 255),
+        rgb(221, 201, 205)
+      )
+      1;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.44) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+  }
+  
+  .card-welcomekit .text-wrapper {
+    position: absolute;
+    width: 296px;
+    top: 11px;
+    left: 0;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000c7;
+    font-size: 23px;
+    text-align: center;
+    letter-spacing: 1.38px;
+    line-height: normal;
+  }
+  
+  .card-welcomekit .div {
+    position: absolute;
+    width: 256px;
+    top: 237px;
+    left: 20px;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000c7;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .card-welcomekit .DALLE {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 61px;
+    left: 68px;
+  }
+  
+  .card-welcomekit .plus-circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 313px;
+    left: 136px;
+  }
+  
 /* Selettore della lingua */
 .language-selector {
     display: flex;
