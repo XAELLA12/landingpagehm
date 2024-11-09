@@ -9,124 +9,77 @@ body {
     min-height: 100vh;
 }
 
+/* Contenitore principale della card, per centrarla orizzontalmente e verticalmente */
+main {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    flex-grow: 1;            /* Espande il main per occupare lo spazio verticale */
+    padding: 20px;
+}
+
+/* Stile della card */
+.card-welcomekit {
+    width: 278px;
+    height: 357px;
+    border-radius: 35px;
+    box-shadow: 0px 4px 25px #3d3c3c40;
+    backdrop-filter: blur(3px) brightness(100%);
+    -webkit-backdrop-filter: blur(3px) brightness(100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.44) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Testo e immagini della card */
+.card-welcomekit .text-wrapper {
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000c7;
+    font-size: 23px;
+    letter-spacing: 1.38px;
+    margin-bottom: 10px;
+}
+
+.card-welcomekit .div {
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000c7;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-welcomekit .DALLE {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card-welcomekit .plus-circle {
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+}
+
 /* Stile dell'header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    backdrop-filter: blur(px);
+    backdrop-filter: blur(8px);
     background-color: rgba(255, 255, 255, 0.2);
     color: #333;
     position: sticky;
     top: 0;
-}
-
-/* Stile della sezione logo */
-header .logo img {
-    height: 40px;
-}
-
-/* Stile card  */
-.card-welcomekit {
-    width: 342px;
-    height: 380px;
-  }
-  
-  .card-welcomekit .overlap-group {
-    position: relative;
-    width: 296px;
-    height: 357px;
-    top: 11px;
-    left: 23px;
-  }
-  
-  .card-welcomekit .card-welcome-kit {
-    position: absolute;
-    width: 278px;
-    height: 357px;
-    top: 0;
-    left: 9px;
-    border-radius: 35px;
-    border: 0px solid;
-    border-color: transparent;
-    box-shadow: 0px 4px 25px #3d3c3c40;
-    backdrop-filter: blur(3px) brightness(100%);
-    -webkit-backdrop-filter: blur(3px) brightness(100%);
-    border-image: linear-gradient(
-        to bottom,
-        rgb(255, 255, 255),
-        rgb(221, 201, 205)
-      )
-      1;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.44) 0%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
-  }
-  
-  .card-welcomekit .text-wrapper {
-    position: absolute;
-    width: 296px;
-    top: 11px;
-    left: 0;
-    font-family: "Darker Grotesque-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000c7;
-    font-size: 23px;
-    text-align: center;
-    letter-spacing: 1.38px;
-    line-height: normal;
-  }
-  
-  .card-welcomekit .div {
-    position: absolute;
-    width: 256px;
-    top: 237px;
-    left: 20px;
-    font-family: "Darker Grotesque-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000c7;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .card-welcomekit .DALLE {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    top: 61px;
-    left: 68px;
-    border-radius: 150px;
-  }
-  
-  .card-welcomekit .plus-circle {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 313px;
-    left: 136px;
-  }
-  
-/* Selettore della lingua */
-.language-selector {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.language-selector label {
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.language-selector select {
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #e4c3d7;
 }
 
 /* Stile del footer */
@@ -143,20 +96,4 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.language-selector-footer label {
-    margin-right: 20px;
-}
-
-.language-selector-footer select {
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-/* Stile del contenuto principale */
-main {
-    padding: 20px;
-    flex-grow: 1;
 }
