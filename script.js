@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const rightBtn = document.getElementById("right");
     const dotsContainer = document.querySelector(".dots");
     const cardWidth = cards[0].offsetWidth + 16; // Larghezza di una card + gap
-    const bodyText = document.querySelector(".body-text"); // Seleziona l'elemento body-text
 
     // Genera i pallini in base al numero di card
     cards.forEach((_, index) => {
@@ -27,17 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Aggiungi evento di click per espandere/chiudere le card
     cards.forEach((card, index) => {
         card.addEventListener("click", () => {
-            const isExpanded = card.classList.contains("expanded");
-            
-            // Rimuove l'espansione da tutte le card e mostra body-text
-            cards.forEach((c) => c.classList.remove("expanded"));
-            if (bodyText) bodyText.classList.remove("hidden");
-
-            if (!isExpanded) {
-                card.classList.add("expanded"); // Espande solo la card cliccata
-                if (bodyText) bodyText.classList.add("hidden"); // Nasconde body-text quando la card è espansa
+            if (card.classList.contains("expanded")) {
+                card.classList.remove("expanded");
+            } else {
+                cards.forEach((c) => c.classList.remove("expanded"));
+                card.classList.add("expanded");
             }
-
             updateDots(index); // Aggiorna il pallino attivo in base alla card cliccata
         });
     });
