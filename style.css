@@ -26,15 +26,16 @@ body {
 
 .wrapper {
     max-width: 1100px;
-    width: 100%;
+    width: 90%;
     position: relative;
 
 }
 
+/* pulsanti laterali di navigazione */
 .wrapper i {
     height: 50px;
     width: 50px;
-    background: rgb(118, 233, 118);
+    background: rgb(41, 47, 41);
     text-align: center;
     line-height: 50px;
     border-radius: 50%;
@@ -48,15 +49,14 @@ body {
 }
 
 .wrapper i:first-child {
-    left: -22px;
-
+    left: -32px;
 }
 
 .wrapper i:last-child {
-    right: -22px;
-
+    right: -32px;
 }
 
+/* Carosello */
 .wrapper .carousel {
     display: grid;
     grid-auto-flow: column;
@@ -94,10 +94,10 @@ body {
 
 .carousel .card {
     scroll-snap-align: start;
-    height: 340px;
+    height: 370px;
     list-style: none;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 40px;
     display: flex;
     cursor: pointer;
     width: 98%;
@@ -107,12 +107,12 @@ body {
     flex-direction: column;
 }
 
+/* Anello */
 .card .img {
-    background: green;
+    background: rgb(83, 73, 83);
     width: 145px;
     height: 145px;
     border-radius: 50%;
-
 }
 
 .card .img img {
@@ -131,7 +131,7 @@ body {
 
 .card span {
     color: #6a6d78;
-    font-size: 1.31rem;
+    font-size: 16px;
 
 }
 
@@ -152,7 +152,7 @@ body {
 /* Stile del footer */
 footer {
     margin-top: auto;
-    padding: 10px 20px;
+    padding: 20px 20px;
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.2);
     color: #333;
