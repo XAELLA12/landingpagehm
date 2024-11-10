@@ -5,23 +5,17 @@ body {
     background: url('img/marmo.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0 35px;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0 35px;
-    background: rgb(228, 220, 220);
 }
 
 .wrapper {
@@ -33,6 +27,7 @@ body {
 
 /* pulsanti laterali di navigazione */
 .wrapper i {
+    display: none;
     height: 50px;
     width: 50px;
     background: rgb(41, 47, 41);
@@ -65,7 +60,7 @@ body {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scrollbar-width: 0;
+    scrollbar-width: none;
 }
 
 .carousel::-webkit-scrollbar {
@@ -105,7 +100,16 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
+
+/* Stile della card espansa */
+.carousel .card.expanded {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    height: 450px; /* Altezza aumentata */
+    transform: scale(1.05); /* Leggero ingrandimento */
+}
+
 
 /* Anello */
 .card .img {
@@ -121,6 +125,7 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid #fff;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 .card h2 {
