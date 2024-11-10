@@ -266,7 +266,20 @@ body {
     border-radius: 7px; /* Angoli più arrotondati per sembrare una linea */
 }
 
+.body-text {
+    font-size: 13px;
+    font-family: inherit; /* Usa il font del resto della pagina */
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto; /* Centra orizzontalmente */
+    padding: 35px 0; /* Spazio sopra e sotto il testo */
+    color: #333;
+}
 
+/* Nasconde il testo quando la card è espansa */
+.hidden {
+    display: none;
+}
 
 
 /* Stile del FOOTER */
