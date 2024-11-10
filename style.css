@@ -154,6 +154,33 @@ body {
     }
 }
 
+/* pallini slider */
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 20px; /* Aumenta la larghezza per creare una linea */
+    height: 10px; /* Riduci l'altezza per farlo apparire come una linea */
+    background-color: #333;
+    border-radius: 7px; /* Angoli più arrotondati per sembrare una linea */
+}
+
+
+
+
 /* Stile del footer */
 footer {
     margin-top: auto;
