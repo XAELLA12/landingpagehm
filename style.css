@@ -8,78 +8,145 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/* Contenitore principale della card, per centrarla orizzontalmente e verticalmente */
-main {
-    display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    flex-grow: 1;            /* Espande il main per occupare lo spazio verticale */
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Stile della card */
-.card-welcomekit {
-    width: 278px;
-    height: 357px;
-    border-radius: 35px;
-    box-shadow: 0px 4px 25px #3d3c3c40;
-    backdrop-filter: blur(3px) brightness(100%);
-    -webkit-backdrop-filter: blur(3px) brightness(100%);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.44) 0%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
+body {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    padding: 0 35px;
+    background: rgb(228, 220, 220);
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+
+}
+
+.wrapper i {
+    height: 50px;
+    width: 50px;
+    background: rgb(118, 233, 118);
     text-align: center;
-    padding: 15px;
-}
-
-/* Testo e immagini della card */
-.card-welcomekit .text-wrapper {
-    font-family: "Darker Grotesque-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000c7;
-    font-size: 23px;
-    letter-spacing: 1.38px;
-    margin-bottom: 10px;
-}
-
-.card-welcomekit .div {
-    font-family: "Darker Grotesque-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000c7;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.card-welcomekit .DALLE {
-    width: 160px;
-    height: 160px;
+    line-height: 50px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25 rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
 }
 
-.card-welcomekit .plus-circle {
-    width: 24px;
-    height: 24px;
-    margin-top: 10px;
+.wrapper i:first-child {
+    left: -22px;
+
 }
 
-/* Stile dell'header */
-header {
+.wrapper i:last-child {
+    right: -22px;
+
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    backdrop-filter: blur(3px);
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #333;
-    position: sticky;
-    top: 0;
+    justify-content: center;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 340px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    width: 98%;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card .img {
+    background: green;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+
+}
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+}
+
+.card span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+
+    }
 }
 
 /* Stile del footer */
