@@ -186,12 +186,12 @@ body {
 .carousel .card.expanded {
     width: 100%; /* Occupa tutta la larghezza disponibile */
     height: 450px; /* Altezza aumentata */
-    transform: scale(1.05); /* Leggero ingrandimento */
+    transform: scale(1.0); /* Leggero ingrandimento */
 }
 /* Stile per il testo "Scopri di più" */
 .discover-more {
     display: block; /* Mostra il testo di default */
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
     text-align: center;
     margin-top: 70px;
