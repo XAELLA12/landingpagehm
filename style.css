@@ -94,6 +94,7 @@ body {
 
 .wrapper {
     padding-top: 92px; /* Stessa altezza dell'header */
+    padding-bottom: 0px;
     max-width: 1100px;
     width: 90%;
     position: relative;
@@ -166,8 +167,10 @@ body {
     scroll-snap-align: start;
     height: 370px;
     list-style: none;
-    background: #fff;
-    border-radius: 40px;
+    background: linear-gradient(320deg, rgba(255, 255, 255, 0.44) 8.13%, rgba(255, 255, 255, 0.05) 92.02%);
+    backdrop-filter: blur(1.5px);
+    border: 1px solid #FFF;
+    border-radius: 35px;
     display: flex;
     cursor: pointer;
     width: 98%;
@@ -175,8 +178,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Stile della card espansa */
 .carousel .card.expanded {
