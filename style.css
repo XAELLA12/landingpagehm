@@ -1,3 +1,78 @@
+/* Stile dell'header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    padding: 15px 30px;
+    backdrop-filter: blur(8px); /* Effetto blur leggero */
+    background-color: rgba(255, 255, 255, 0.6); /* Trasparenza */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leggera ombra */
+}
+
+/* Stile del logo */
+.logo {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    left: 30px; /* Distanza dal bordo sinistro */
+}
+
+/* Stile del testo nell'header */
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.header-text p {
+    font-size: 12px;
+    margin: 0;
+    color: #666;
+}
+
+
+
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mantiene il logo a sinistra */
+}
+
+.logo-image {
+    max-width: 170px; /* Dimensione massima del logo */
+    height: auto;
+    margin-right: 15px; /* Spazio tra il logo e il titolo */
+}
+
+.site-title {
+    font-size: 1.8rem; /* Regola la dimensione del titolo per renderlo ben visibile */
+    color: #2c3e50;
+    margin: 0 auto; /* Utilizza margini automatici per centrare il titolo */
+    text-align: center; /* Allinea il testo del titolo al centro */
+    flex: 1; /* Fa sì che il titolo occupi lo spazio disponibile per centrarlo */
+      font-family: 'Poppins', sans-serif; /* Cambia font in Poppins */
+    font-weight: 400; /* Imposta il peso Regular 400 per il titolo */
+}
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+
 /* Sfondo dell'intera pagina */
 body {
     margin: 0;
