@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                     case 3:
                         products = ["Ti accompagneremo in una passeggiata nei magici vicoli di Roma per scoprire i suoi piatti tipici"];
-                        buttonText = "Scopri di più!";
+                        buttonText = "Prenota ora!";
                         break;
                 }
 
