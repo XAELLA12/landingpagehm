@@ -336,8 +336,8 @@ footer {
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     padding: 15px 30px;
-    backdrop-filter: blur(8px); /* Effetto blur leggero */
-    background-color: rgba(255, 255, 255, 0.6); /* Trasparenza */
+    backdrop-filter: blur(0px); /* Effetto blur leggero */
+    background-color: rgba(255, 255, 255, 0); /* Trasparenza */
     position: fixed;
     bottom: 0;
     left: 0;
