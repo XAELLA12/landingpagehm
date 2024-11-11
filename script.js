@@ -1,116 +1,127 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll(".carousel .card");
     const carousel = document.querySelector(".carousel");
-    const leftBtn = document.getElementById("left");
-    const rightBtn = document.getElementById("right");
     const dotsContainer = document.querySelector(".dots");
-    const cardWidth = cards[0].offsetWidth + 16; // Larghezza di una card + gap
-    const bodyText = document.querySelector(".body-text"); // Seleziona l'elemento body-text
+    const cards = document.querySelectorAll(".carousel .card");
 
-    // Genera i pallini in base al numero di card
+    // Crea i pallini in base al numero di card
     cards.forEach((_, index) => {
         const dot = document.createElement("span");
         dot.classList.add("dot");
         if (index === 0) dot.classList.add("active"); // Imposta il primo pallino come attivo all'inizio
         dotsContainer.appendChild(dot);
+        
+        // Aggiunge evento di click al pallino per scorrere alla card corrispondente
+        dot.addEventListener("click", () => {
+            scrollToCard(index);
+        });
     });
 
     const dots = dotsContainer.querySelectorAll(".dot");
 
-    // Funzione per aggiornare i pallini attivi
+    // Funzione per aggiornare il pallino attivo
     function updateDots(activeIndex) {
         dots.forEach((dot, index) => {
             dot.classList.toggle("active", index === activeIndex);
         });
     }
 
-    // Aggiungi evento di click per espandere/chiudere le card
+    // Funzione per scorrere fino a una card specifica
+    function scrollToCard(index) {
+        const cardWidth = cards[0].offsetWidth + 16; // Larghezza card + gap
+        carousel.scrollLeft = index * cardWidth;
+        updateDots(index);
+    }
+
+    // Aggiunge evento di click a ogni card per espandere/richiedere
     cards.forEach((card, index) => {
         card.addEventListener("click", () => {
             const isExpanded = card.classList.contains("expanded");
 
-            // Rimuove l'espansione da tutte le card e mostra body-text
-            cards.forEach((c) => {
-                c.classList.remove("expanded");
-                const productList = c.querySelector(".product-list");
-                const bookingButton = c.querySelector(".booking-button");
-                if (productList) productList.remove(); // Rimuove la lista se presente
-                if (bookingButton) bookingButton.remove(); // Rimuove il pulsante se presente
-                const description = c.querySelector("span");
-                description.textContent = "La nostra selezione di prodotti locali"; // Resetta il testo originale
-            });
+            // Se la card è già espansa, la richiude
+            if (isExpanded) {
+                card.classList.remove("expanded");
 
-            if (bodyText) bodyText.classList.remove("hidden");
+                // Rimuove contenuti specifici di espansione
+                const productList = card.querySelector(".product-list");
+                const bookingButton = card.querySelector(".booking-button");
+                if (productList) productList.remove();
+                if (bookingButton) bookingButton.remove();
 
-            if (!isExpanded) {
-                card.classList.add("expanded"); // Espande solo la card cliccata
-                if (bodyText) bodyText.classList.add("hidden"); // Nasconde body-text quando la card è espansa
+            } else {
+                // Chiude tutte le altre card e apre quella selezionata
+                cards.forEach((c) => {
+                    c.classList.remove("expanded");
+                    const productList = c.querySelector(".product-list");
+                    const bookingButton = c.querySelector(".booking-button");
+                    if (productList) productList.remove();
+                    if (bookingButton) bookingButton.remove();
+                });
 
-                // Trasforma il testo in una lista di prodotti
-                const description = card.querySelector("span");
-                description.textContent = ""; // Svuota il testo originale
+                // Aggiunge l'espansione alla card cliccata
+                card.classList.add("expanded");
 
-                // Crea la lista di prodotti
+                // Creazione del contenuto della lista dei prodotti
                 const productList = document.createElement("ul");
                 productList.classList.add("product-list");
 
-                // Aggiungi gli elementi della lista
-                ["Bottiglia di Vino", "Salame", "Formaggio Pecorino", "Prosciutto", "Mozzarella di Bufala", "Tarallucci", "Ciambelline al Vino"].forEach(product => {
+                let products;
+                let buttonText;
+
+                // Contenuto specifico in base alla card
+                switch(index) {
+                    case 0:
+                        products = ["Vino", "Salame", "Prosciutto"];
+                        buttonText = "Prenota ora!";
+                        break;
+                    case 1:
+                        products = ["Coding Courses", "Practice", "Projects"];
+                        buttonText = "Join Now!";
+                        break;
+                    case 2:
+                        products = ["Olio", "Formaggio", "Pane"];
+                        buttonText = "Acquista ora!";
+                        break;
+                    case 3:
+                        products = ["Pasta", "Pomodori", "Mozzarella"];
+                        buttonText = "Scopri di più!";
+                        break;
+                }
+
+                products.forEach(product => {
                     const listItem = document.createElement("li");
                     listItem.textContent = product;
                     productList.appendChild(listItem);
                 });
 
-                // Aggiungi la lista all'elemento "span"
-                description.appendChild(productList);
+                // Aggiunge la lista e il pulsante alla card espansa
+                card.appendChild(productList);
 
-                // Crea il pulsante Prenota Ora
+                // Pulsante di prenotazione
                 const bookingButton = document.createElement("a");
                 bookingButton.href = "checkout.html";
                 bookingButton.classList.add("booking-button");
-                bookingButton.target = "_blank"; // Apri in una nuova pagina
+                bookingButton.target = "_blank";
 
-                // Crea l'immagine del pulsante e aggiungi il testo
                 const buttonImage = document.createElement("img");
                 buttonImage.src = "img/addcart_button.png";
-                buttonImage.alt = "Prenota ora";
+                buttonImage.alt = buttonText;
                 bookingButton.appendChild(buttonImage);
 
-                // Testo all'interno del pulsante
-                const buttonText = document.createElement("span");
-                buttonText.textContent = "Prenota ora!";
-                bookingButton.appendChild(buttonText);
+                const buttonTextEl = document.createElement("span");
+                buttonTextEl.textContent = buttonText;
+                bookingButton.appendChild(buttonTextEl);
 
-                // Aggiungi il pulsante sotto la lista dei prodotti
-                description.appendChild(bookingButton);
+                card.appendChild(bookingButton);
             }
-
-            updateDots(index); // Aggiorna il pallino attivo in base alla card cliccata
+            // Aggiorna i pallini attivi in base all'indice della card cliccata
+            updateDots(index);
         });
     });
 
-    // Funzioni per lo scorrimento del carosello
-    let currentIndex = 0;
-
-    leftBtn.addEventListener("click", () => {
-        if (currentIndex > 0) currentIndex--;
-        carousel.scrollLeft -= cardWidth;
-        updateDots(currentIndex);
-    });
-
-    rightBtn.addEventListener("click", () => {
-        if (currentIndex < cards.length - 1) currentIndex++;
-        carousel.scrollLeft += cardWidth;
-        updateDots(currentIndex);
-    });
-
-    // Rileva lo scroll del carosello e aggiorna i pallini attivi
+    // Scorrimento del carosello per aggiornare i pallini in base alla posizione
     carousel.addEventListener("scroll", () => {
-        const scrollLeft = carousel.scrollLeft;
-        const newIndex = Math.round(scrollLeft / cardWidth); // Calcola l'indice della card visibile
-        if (newIndex !== currentIndex) {
-            currentIndex = newIndex;
-            updateDots(currentIndex);
-        }
+        const cardWidth = cards[0].offsetWidth + 16; // Larghezza card + gap
+        const newIndex = Math.round(carousel.scrollLeft / cardWidth);
+        updateDots(newIndex);
     });
 });
