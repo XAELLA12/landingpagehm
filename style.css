@@ -186,7 +186,7 @@ body {
 /* Stile della card espansa */
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
-    height: 450px; /* Altezza aumentata */
+    height: 480px; /* Altezza aumentata */
     transform: scale(1.0); /* Leggero ingrandimento */
 }
 /* Stile per il testo "Scopri di più" */
@@ -207,7 +207,7 @@ body {
 }
 
 .product-list li {
-    font-size: 16px;
+    font-size: 14px;
     color: #6a6d78;
     margin: 5px 0;
 }

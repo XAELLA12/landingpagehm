@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 productList.classList.add("product-list");
 
                 // Aggiungi gli elementi della lista
-                ["Vino", "Salame", "Prosciutto"].forEach(product => {
+                ["Bottiglia di Vino", "Salame", "Formaggio Pecorino", "Prosciutto", "Mozzarella di Bufala", "Tarallucci", "Ciambelline al Vino"].forEach(product => {
                     const listItem = document.createElement("li");
                     listItem.textContent = product;
                     productList.appendChild(listItem);
