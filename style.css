@@ -11,7 +11,6 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leggera ombra */
 }
 
 /* Stile del logo */
@@ -226,7 +225,7 @@ body {
 
 .product-list li {
     font-size: 14px;
-    color: #6a6d78;
+    color: #ffffff;
     margin: 5px 0;
 }
 
