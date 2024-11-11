@@ -182,6 +182,12 @@ body {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card span {
+    display: block; /* Assicura che il sottotitolo occupi tutta la larghezza */
+    text-align: center; /* Allinea il testo al centro */
+    margin-top: 0px; /* Aggiungi margine se necessario */
+}
+
 
 /* Stile della card espansa */
 .carousel .card.expanded {

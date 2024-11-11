@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
 
+    // Descrizioni iniziali per ciascuna card
+    const initialDescriptions = [
+        "La nostra selezione di prodotti locali direttamente a casa tua!",
+        "Un'autentica esperienza di cena romana a casa tua!",
+        "Prepareremo un aperitivo in stile Italiano con una selezione di prodotti tipici direttamente a casa vostra!",
+        "Cammianta culinaria nei vicoli di Roma"
+    ];
+
     // Crea i pallini in base al numero di card
     cards.forEach((_, index) => {
         const dot = document.createElement("span");
@@ -53,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (productList) productList.remove();
                 if (bookingButton) bookingButton.remove();
 
-                // Ripristina il testo originale
+                // Ripristina il testo originale specifico per ciascuna card
                 const description = card.querySelector("span");
-                description.textContent = "La nostra selezione di prodotti locali";
+                description.textContent = initialDescriptions[index]; // Usa la descrizione iniziale specifica
 
                 // Mostra il body text quando tutte le card sono chiuse
                 if (![...cards].some(c => c.classList.contains("expanded"))) {
@@ -63,12 +71,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             } else {
                 // Chiude tutte le altre card e apre quella selezionata
-                cards.forEach((c) => {
+                cards.forEach((c, i) => {
                     c.classList.remove("expanded");
                     const productList = c.querySelector(".product-list");
                     const bookingButton = c.querySelector(".booking-button");
                     if (productList) productList.remove();
                     if (bookingButton) bookingButton.remove();
+
+                    // Ripristina il testo originale specifico per ogni card
+                    const description = c.querySelector("span");
+                    description.textContent = initialDescriptions[i]; // Usa la descrizione iniziale specifica
                 });
 
                 // Nasconde il body text e aggiunge l'espansione alla card selezionata
