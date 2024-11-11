@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector(".carousel");
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
+    const bodyText = document.querySelector(".body-text");
 
     // Crea i pallini in base al numero di card
     cards.forEach((_, index) => {
@@ -32,7 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDots(index);
     }
 
-    // Aggiunge evento di click a ogni card per espandere/richiedere
+    // Funzione per mostrare o nascondere il body text
+    function toggleBodyText(visible) {
+        bodyText.style.display = visible ? "block" : "none";
+    }
+
+    // Aggiunge evento di click a ogni card per espandere/chiudere
     cards.forEach((card, index) => {
         card.addEventListener("click", () => {
             const isExpanded = card.classList.contains("expanded");
@@ -47,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (productList) productList.remove();
                 if (bookingButton) bookingButton.remove();
 
+                // Mostra il body text quando tutte le card sono chiuse
+                if (![...cards].some(c => c.classList.contains("expanded"))) {
+                    toggleBodyText(true);
+                }
             } else {
                 // Chiude tutte le altre card e apre quella selezionata
                 cards.forEach((c) => {
@@ -57,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (bookingButton) bookingButton.remove();
                 });
 
-                // Aggiunge l'espansione alla card cliccata
+                // Nasconde il body text e aggiunge l'espansione alla card selezionata
+                toggleBodyText(false);
                 card.classList.add("expanded");
 
                 // Creazione del contenuto della lista dei prodotti
