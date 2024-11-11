@@ -198,6 +198,21 @@ body {
     margin-top: 70px;
 }
 
+/* Stile della lista prodotti */
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+.product-list li {
+    font-size: 16px;
+    color: #6a6d78;
+    margin: 5px 0;
+}
+
+
 /* Nasconde il testo quando la card è espansa */
 .card.expanded .discover-more {
     display: none;

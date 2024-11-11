@@ -28,14 +28,39 @@ document.addEventListener("DOMContentLoaded", function() {
     cards.forEach((card, index) => {
         card.addEventListener("click", () => {
             const isExpanded = card.classList.contains("expanded");
-            
+
             // Rimuove l'espansione da tutte le card e mostra body-text
-            cards.forEach((c) => c.classList.remove("expanded"));
+            cards.forEach((c) => {
+                c.classList.remove("expanded");
+                const productList = c.querySelector(".product-list");
+                if (productList) productList.remove(); // Rimuove la lista se presente
+                const description = c.querySelector("span");
+                description.textContent = "La nostra selezione di prodotti locali"; // Resetta il testo originale
+            });
+
             if (bodyText) bodyText.classList.remove("hidden");
 
             if (!isExpanded) {
                 card.classList.add("expanded"); // Espande solo la card cliccata
                 if (bodyText) bodyText.classList.add("hidden"); // Nasconde body-text quando la card è espansa
+
+                // Trasforma il testo in una lista di prodotti
+                const description = card.querySelector("span");
+                description.textContent = ""; // Svuota il testo originale
+
+                // Crea la lista di prodotti
+                const productList = document.createElement("ul");
+                productList.classList.add("product-list");
+
+                // Aggiungi gli elementi della lista
+                ["Bottiglia di vino", "Salame", "Formaggio Pecorino", "Tarallucci","Mozzarella di Bufala" , "Prosciutto", "Ciambelline al Vino"].forEach(product => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = product;
+                    productList.appendChild(listItem);
+                });
+
+                // Aggiungi la lista all'elemento "span"
+                description.appendChild(productList);
             }
 
             updateDots(index); // Aggiorna il pallino attivo in base alla card cliccata
