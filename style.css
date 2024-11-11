@@ -77,7 +77,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('img/marmo.png') no-repeat center center fixed;
+    background: url('img/panna.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -89,7 +89,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
 }
 
 
@@ -107,7 +108,7 @@ body {
     display: none;
     height: 50px;
     width: 50px;
-    background: rgb(41, 47, 41);
+    background: rgb(243, 229, 247);
     text-align: center;
     line-height: 50px;
     border-radius: 50%;
@@ -168,9 +169,9 @@ body {
     scroll-snap-align: start;
     height: 370px;
     list-style: none;
-    background: linear-gradient(320deg, rgba(255, 255, 255, 0.44) 8.13%, rgba(255, 255, 255, 0.05) 92.02%);
+    background: linear-gradient(140deg, rgba(253, 247, 212, 0.44) 8.13%, rgba(68, 42, 21, 0.067) 92.02%);
     backdrop-filter: blur(1.5px);
-    border: 1px solid #FFF;
+    border: 1px solid hwb(0 100% 0%);
     border-radius: 35px;
     display: flex;
     cursor: pointer;
@@ -248,7 +249,6 @@ body {
 .booking-button span {
     position: absolute;
     color: white;
-    font-weight: bold;
     font-size: 16px;
     text-align: center;
 }
