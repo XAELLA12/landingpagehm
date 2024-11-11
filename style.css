@@ -198,6 +198,15 @@ body {
     margin-top: 70px;
 }
 
+/* Stile per l'icona a freccia */
+.arrow-icon {
+    display: block; /* Assicura che l'icona occupi l'intera riga */
+    margin: 0 auto; /* Centra l'icona orizzontalmente */
+    width: 11px;
+    height: auto;
+    margin-top: 4px;
+}
+
 /* Stile della lista prodotti */
 .product-list {
     list-style-type: none;

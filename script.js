@@ -53,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (productList) productList.remove();
                 if (bookingButton) bookingButton.remove();
 
+                // Ripristina il testo originale
+                const description = card.querySelector("span");
+                description.textContent = "La nostra selezione di prodotti locali";
+
                 // Mostra il body text quando tutte le card sono chiuse
                 if (![...cards].some(c => c.classList.contains("expanded"))) {
                     toggleBodyText(true);
@@ -71,17 +75,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 toggleBodyText(false);
                 card.classList.add("expanded");
 
-                // Creazione del contenuto della lista dei prodotti
+                // Cambia il contenuto del testo con una lista di prodotti
+                const description = card.querySelector("span");
+                description.textContent = ""; // Svuota il testo originale
+
                 const productList = document.createElement("ul");
                 productList.classList.add("product-list");
 
+                // Lista dei prodotti specifici per ciascuna card
                 let products;
                 let buttonText;
 
-                // Contenuto specifico in base alla card
+                // Definisce i prodotti e il testo del pulsante in base alla card
                 switch(index) {
                     case 0:
-                        products = ["Vino", "Salame", "Prosciutto"];
+                        products = ["Bottiglia di Vino", "Tarallucci", "Formaggio Pecorino", "Salame", "Mozzarella di Bufala", "Prosciutto", "Ciambelline al Vino"];
                         buttonText = "Prenota ora!";
                         break;
                     case 1:
@@ -98,14 +106,15 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                 }
 
+                // Crea gli elementi della lista dei prodotti
                 products.forEach(product => {
                     const listItem = document.createElement("li");
                     listItem.textContent = product;
                     productList.appendChild(listItem);
                 });
 
-                // Aggiunge la lista e il pulsante alla card espansa
-                card.appendChild(productList);
+                // Aggiunge la lista di prodotti sotto il testo
+                description.appendChild(productList);
 
                 // Pulsante di prenotazione
                 const bookingButton = document.createElement("a");
