@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         buttonText = "Richiedilo ora!";
                         break;
                     case 1:
-                        products = ["Al momento della prenotazione comporrete insieme allo Chef un Menu su misura per voi!", "---", "A partire da 100€"];
+                        products = ["Al momento della prenotazione comporrete insieme allo Chef un Menu su misura per voi!", "---", "90€ a persona"];
                         buttonText = "Prenota ora!";
                         break;
                     case 2:
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         buttonText = "Prenota ora!";
                         break;
                     case 3:
-                        products = ["Ti accompagneremo in una passeggiata nei magici vicoli di Roma per scoprire i suoi piatti tipici"];
+                        products = ["Ti accompagneremo in una passeggiata nei magici vicoli di Roma per scoprire i suoi piatti tipici", "---", "40€ a persona"];
                         buttonText = "Prenota ora!";
                         break;
                 }
