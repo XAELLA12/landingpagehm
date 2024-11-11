@@ -186,7 +186,7 @@ body {
 /* Stile della card espansa */
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
-    height: 480px; /* Altezza aumentata */
+    height: 520px; /* Altezza aumentata */
     transform: scale(1.0); /* Leggero ingrandimento */
 }
 /* Stile per il testo "Scopri di più" */

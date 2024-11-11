@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Definisce i prodotti e il testo del pulsante in base alla card
                 switch(index) {
                     case 0:
-                        products = ["Bottiglia di Vino", "Tarallucci", "Formaggio Pecorino", "Salame", "Mozzarella di Bufala", "Prosciutto", "Ciambelline al Vino"];
+                        products = ["Bottiglia di Vino", "Tarallucci", "Formaggio Pecorino", "Salame", "Mozzarella di Bufala", "Prosciutto", "Ciambelline al Vino", "---", "a partire da 60€"];
                         buttonText = "Prenota ora!";
                         break;
                     case 1:
