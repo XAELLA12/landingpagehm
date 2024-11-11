@@ -93,15 +93,15 @@ document.addEventListener("DOMContentLoaded", function() {
                         buttonText = "Prenota ora!";
                         break;
                     case 1:
-                        products = ["Coding Courses", "Practice", "Projects"];
-                        buttonText = "Join Now!";
+                        products = ["Al momento della prenotazione comporrete insieme allo Chef un Menu su misura per voi!", "---", "A partire da 100€"];
+                        buttonText = "Prenota ora!";
                         break;
                     case 2:
-                        products = ["Olio", "Formaggio", "Pane"];
-                        buttonText = "Acquista ora!";
+                        products = ["Selezione di salumi", "Parmiggiano Reggiano", "Mozzarella di Bufala", "Pizza Bianca", "Mix di Bruschette", "Fritti Romani", "Prosecco/Champagne", "Acqua", "---", "60€ a persona"];
+                        buttonText = "Prenota ora!";
                         break;
                     case 3:
-                        products = ["Pasta", "Pomodori", "Mozzarella"];
+                        products = ["Ti accompagneremo in una passeggiata nei magici vicoli di Roma per scoprire i suoi piatti tipici"];
                         buttonText = "Scopri di più!";
                         break;
                 }
