@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         buttonText = "Prenota ora!";
                         break;
                     case 2:
-                        products = ["Selezione di salumi", "Parmiggiano Reggiano", "Mozzarella di Bufala", "Pizza Bianca", "Mix di Bruschette", "Fritti Romani", "Prosecco/Champagne", "Acqua", "---", "60€ a persona"];
+                        products = ["Selezione di salumi", "Parmiggiano Reggiano", "Mozzarella di Bufala", "Pizza Bianca", "Mix di Bruschette", "Fritti Romani", "Prosecco/Champagne", "---", "60€ a persona"];
                         buttonText = "Prenota ora!";
                         break;
                     case 3:

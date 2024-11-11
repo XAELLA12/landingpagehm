@@ -180,6 +180,7 @@ body {
     justify-content: center;
     flex-direction: column;
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
+    gap: 5px;  /* distanzia uniformemente elementi */
 }
 
 
