@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
             cards.forEach((c) => {
                 c.classList.remove("expanded");
                 const productList = c.querySelector(".product-list");
+                const bookingButton = c.querySelector(".booking-button");
                 if (productList) productList.remove(); // Rimuove la lista se presente
+                if (bookingButton) bookingButton.remove(); // Rimuove il pulsante se presente
                 const description = c.querySelector("span");
                 description.textContent = "La nostra selezione di prodotti locali"; // Resetta il testo originale
             });
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 productList.classList.add("product-list");
 
                 // Aggiungi gli elementi della lista
-                ["Bottiglia di vino", "Salame", "Formaggio Pecorino", "Tarallucci","Mozzarella di Bufala" , "Prosciutto", "Ciambelline al Vino"].forEach(product => {
+                ["Vino", "Salame", "Prosciutto"].forEach(product => {
                     const listItem = document.createElement("li");
                     listItem.textContent = product;
                     productList.appendChild(listItem);
@@ -61,6 +63,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Aggiungi la lista all'elemento "span"
                 description.appendChild(productList);
+
+                // Crea il pulsante Prenota Ora
+                const bookingButton = document.createElement("a");
+                bookingButton.href = "checkout.html";
+                bookingButton.classList.add("booking-button");
+                bookingButton.target = "_blank"; // Apri in una nuova pagina
+
+                // Crea l'immagine del pulsante e aggiungi il testo
+                const buttonImage = document.createElement("img");
+                buttonImage.src = "img/addcart_button.png";
+                buttonImage.alt = "Prenota ora";
+                bookingButton.appendChild(buttonImage);
+
+                // Testo all'interno del pulsante
+                const buttonText = document.createElement("span");
+                buttonText.textContent = "Prenota ora!";
+                bookingButton.appendChild(buttonText);
+
+                // Aggiungi il pulsante sotto la lista dei prodotti
+                description.appendChild(bookingButton);
             }
 
             updateDots(index); // Aggiorna il pallino attivo in base alla card cliccata

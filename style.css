@@ -212,6 +212,31 @@ body {
     margin: 5px 0;
 }
 
+/* Stile per il pulsante Prenota Ora */
+.booking-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.booking-button img {
+    width: 60%; /* Imposta la larghezza dell'immagine */
+    height: auto;
+}
+
+.booking-button span {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+
 
 /* Nasconde il testo quando la card è espansa */
 .card.expanded .discover-more {
