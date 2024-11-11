@@ -175,7 +175,7 @@ body {
     display: flex;
     cursor: pointer;
     width: 98%;
-    padding-bottom: 15px;
+    padding: 1px; /* Aggiungi padding su tutti i lati */
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -186,9 +186,11 @@ body {
 /* Stile della card espansa */
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
-    height: 520px; /* Altezza aumentata */
-    transform: scale(1.0); /* Leggero ingrandimento */
+    height: 530px; /* Altezza aumentata */
+
 }
+
+
 /* Stile per il testo "Scopri di più" */
 .discover-more {
     display: block; /* Mostra il testo di default */

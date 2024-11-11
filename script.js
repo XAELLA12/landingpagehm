@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 switch(index) {
                     case 0:
                         products = ["Bottiglia di Vino", "Tarallucci", "Formaggio Pecorino", "Salame", "Mozzarella di Bufala", "Prosciutto", "Ciambelline al Vino", "---", "a partire da 60€"];
-                        buttonText = "Prenota ora!";
+                        buttonText = "Richiedilo ora!";
                         break;
                     case 1:
                         products = ["Al momento della prenotazione comporrete insieme allo Chef un Menu su misura per voi!", "---", "A partire da 100€"];
