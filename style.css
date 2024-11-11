@@ -201,6 +201,9 @@ body {
 .card.expanded .discover-more {
     display: none;
 }
+.card.expanded .arrow-icon {
+    display: none;
+}
 
 
 /* Anello immagine*/
