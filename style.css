@@ -77,7 +77,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: rgb(168, 136, 135) no-repeat center center fixed;
+    background: rgb(255, 255, 255) no-repeat center center fixed;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -169,7 +169,7 @@ body {
     scroll-snap-align: start;
     height: 370px;
     list-style: none;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(110, 136, 65, 0.974);
     backdrop-filter: blur(1.5px);
     border: 1px solid hwb(0 100% 0%);
     border-radius: 35px;
