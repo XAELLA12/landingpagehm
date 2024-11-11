@@ -201,7 +201,7 @@ body {
 .discover-more {
     display: block; /* Mostra il testo di default */
     font-size: 14px;
-    color: #666;
+    color: #ffffffdb;
     text-align: center;
     margin-top: 70px;
 }
@@ -276,7 +276,7 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #fff;
+    border: 4px solid #e0f6da;
     transition: width 0.3s ease, height 0.3s ease;
 }
 
@@ -284,10 +284,11 @@ body {
     font-weight: 500;
     font-size: 1.56rem;
     margin: 30px 0 5px;
+    color: #272727;
 }
 
 .card span {
-    color: #6a6d78;
+    color: #ffffff;
     font-size: 16px;
 
 }
