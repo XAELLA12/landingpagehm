@@ -180,14 +180,13 @@ body {
     justify-content: center;
     flex-direction: column;
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
-    gap: 5px;  /* distanzia uniformemente elementi */
 }
 
 
 /* Stile della card espansa */
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
-    height: 530px; /* Altezza aumentata */
+    height: 520px; /* Altezza aumentata */
 
 }
 
