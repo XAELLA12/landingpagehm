@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const initialDescriptions = [
         "La nostra selezione di prodotti locali direttamente a casa tua!",
         "Un'autentica esperienza di cena romana a casa tua!",
-        "Prepareremo un aperitivo in stile Italiano con una selezione di prodotti tipici direttamente a casa vostra!",
+        "Prepareremo un aperitivo in stile Italiano direttamente a casa vostra!",
         "Cammianta culinaria nei vicoli di Roma"
     ];
 
