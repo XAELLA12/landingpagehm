@@ -305,7 +305,16 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leggera ombra */
 }
 
+.copyright {
+font-size: 10px;
+}   
+
+.language-selector-footer {
+    font-size: 12px;
+    }   
+
 .footer-content {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
