@@ -30,13 +30,13 @@
     font-size: 25px;
     margin: 0;
     font-weight: bold;
-    color: #333;
+    color: rgba(21, 19, 41, 0.848);
 }
 
 .header-text p {
     font-size: 12px;
     margin: 0;
-    color: #666;
+    color: rgba(21, 19, 41, 0.848);
 }
 
 
@@ -76,7 +76,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: rgb(255, 255, 255) no-repeat center center fixed;
+    background-image: url('img/marmo.png');
+    background-repeat: no-repeat; /* Evita che l’immagine si ripeta */
+    background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
+    background-position: center; /* Centra l’immagine */
     background-size: cover;
     display: flex;
     align-items: center;
@@ -99,7 +102,9 @@ body {
     max-width: 1100px;
     width: 90%;
     position: relative;
-
+    border-radius: 35px; /* Imposta l'arrotondamento del bordo */
+    overflow: hidden; /* Nasconde eventuali elementi che escono dal bordo */
+    background-color: rgba(255, 255, 255, 0.1); /* Colore di sfondo opzionale */
 }
 
 /* pulsanti laterali di navigazione */
@@ -116,8 +121,6 @@ body {
     top: 50%;
     font-size: 1.25 rem;
     transform: translateY(-50%);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-
 }
 
 .wrapper i:first-child {
@@ -168,8 +171,9 @@ body {
     scroll-snap-align: start;
     height: 370px;
     list-style: none;
-    background: linear-gradient(to bottom, rgb(129, 160, 80), rgb(110, 136, 65));
-    backdrop-filter: blur(1.5px);
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo bianco trasparente */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
     border: 1px solid hwb(0 100% 0%);
     border-radius: 40px;
     display: flex;
@@ -201,7 +205,7 @@ body {
 .discover-more {
     display: block; /* Mostra il testo di default */
     font-size: 14px;
-    color: #ffffffdb;
+    color: #2e294177;
     text-align: center;
     margin-top: 70px;
 }
@@ -213,6 +217,7 @@ body {
     width: 11px;
     height: auto;
     margin-top: 4px;
+    opacity: 40%;
 }
 
 /* Stile della lista prodotti */
@@ -225,7 +230,7 @@ body {
 
 .product-list li {
     font-size: 14px;
-    color: #ffffff;
+    color: #151329a9;
     margin: 5px 0;
 }
 
@@ -247,7 +252,7 @@ body {
 
 .booking-button span {
     position: absolute;
-    color: white;
+    color: #000000;
     font-size: 16px;
     text-align: center;
 }
@@ -265,7 +270,7 @@ body {
 
 /* Anello immagine*/
 .card .img {
-    background: rgb(83, 73, 83);
+    background: rgba(21, 19, 41, 0.848);
     width: 145px;
     height: 145px;
     border-radius: 50%;
@@ -276,7 +281,7 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #e0f6da;
+    border: 4px solid #f0eff0;
     transition: width 0.3s ease, height 0.3s ease;
 }
 
@@ -284,11 +289,11 @@ body {
     font-weight: 500;
     font-size: 1.56rem;
     margin: 30px 0 5px;
-    color: #272727;
+    color: rgba(21, 19, 41, 0.848);
 }
 
 .card span {
-    color: #ffffff;
+    color: #151329a9;
     font-size: 16px;
 
 }
@@ -338,7 +343,7 @@ body {
     max-width: 90%;
     margin: 0 auto; /* Centra orizzontalmente */
     padding: 35px 0; /* Spazio sopra e sotto il testo */
-    color: #333;
+    color: rgba(21, 19, 41, 0.848);
 }
 
 /* Nasconde il testo quando la card è espansa */
@@ -365,10 +370,12 @@ footer {
 
 .copyright {
 font-size: 10px;
+color: rgba(21, 19, 41, 0.848);
 }   
 
 .language-selector-footer {
     font-size: 12px;
+    color: rgba(21, 19, 41, 0.848);
     }   
 
 .footer-content {
