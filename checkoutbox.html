@@ -6,6 +6,12 @@
     <title>Checkout - Home Made</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo1.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("c4K6orYiIW64lqj7-"); // Public Key di EmailJS
+        })();
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -41,19 +47,16 @@
                     <input type="date" id="date" name="date" required>
                 </div>
 
-                <!-- Allergeni -->
-                <div class="form-group">
-                    <label for="allergens">Allergeni</label>
-                    <textarea id="allergens" name="allergens" placeholder="Indica eventuali allergeni..."></textarea>
-                </div>
-
                 <!-- Numero di persone -->
                 <div class="form-group">
                     <label for="people">Numero di persone</label>
                     <select id="people" name="people" required>
-                        <option value="1-2">1-2 persone</option>
-                        <option value="3-4">3-4 persone</option>
-                        <option value="5-6">5-6 persone</option>
+                        <option value="1-2">1 persona</option>
+                        <option value="1-2">2 persone</option>
+                        <option value="3-4">3 persone</option>
+                        <option value="3-4">4 persone</option>
+                        <option value="5-6">5 persone</option>
+                        <option value="5-6">6 persone</option>
                     </select>
                 </div>
 
@@ -66,6 +69,9 @@
                 <!-- Pulsante di invio -->
                 <button type="submit">Conferma Ordine</button>
             </form>
+            
+            <!-- Messaggio di conferma -->
+            <p id="confirmation-message" style="display:none; color: green; text-align: center;">La tua prenotazione è stata inviata! A breve verrai contattato tramite mail per confermare la tua prenotazione.</p>
         </section>
     </main>
 
@@ -83,12 +89,13 @@
         </div>
     </footer>
 
-    <!-- Script per calcolare il totale e recuperare il servizio selezionato -->
+    <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Calcola il totale in base al numero di persone
             const peopleSelect = document.getElementById("people");
             const totalInput = document.getElementById("total");
+            const confirmationMessage = document.getElementById("confirmation-message");
+            const orderForm = document.getElementById("order-form");
 
             function updateTotal() {
                 let total;
@@ -107,14 +114,30 @@
             }
 
             peopleSelect.addEventListener("change", updateTotal);
-            updateTotal(); // Calcola il totale iniziale
+            updateTotal();
 
-            // Recupera il servizio selezionato e inseriscilo nel campo "Servizio scelto"
-            const serviceName = localStorage.getItem("selectedService");
-            if (serviceName) {
-                document.getElementById("service").value = serviceName;
-                localStorage.removeItem("selectedService"); // Rimuove il valore dopo l'uso
-            }
+            orderForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                // Ottieni i valori del modulo
+                const templateParams = {
+                    service: document.getElementById("service").value,
+                    name: document.getElementById("name").value,
+                    date: document.getElementById("date").value,
+                    people: document.getElementById("people").value,
+                    total: document.getElementById("total").value
+                };
+
+                // Invio dell'email con EmailJS
+                emailjs.send("service_vg22scj", "template_ney6ib9", templateParams)
+                    .then(function(response) {
+                        console.log("Email inviata con successo!", response.status, response.text);
+                        orderForm.style.display = "none";
+                        confirmationMessage.style.display = "block";
+                    }, function(error) {
+                        console.log("Errore nell'invio dell'email:", error);
+                    });
+            });
         });
     </script>
 </body>
