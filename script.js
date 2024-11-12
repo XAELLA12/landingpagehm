@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
+
+    // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
         "La nostra selezione di prodotti locali direttamente a casa tua!",
         "Un'autentica esperienza di cena romana a casa tua!",
@@ -55,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Rimuove contenuti specifici di espansione
                 const productList = card.querySelector(".product-list");
-                const bookingButton = card.querySelector(".booking-button");
+                const bookingButton = card.querySelector(".styled-button"); // Riferimento al pulsante con la classe
+
                 if (productList) productList.remove();
                 if (bookingButton) bookingButton.remove();
 
@@ -72,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 cards.forEach((c, i) => {
                     c.classList.remove("expanded");
                     const productList = c.querySelector(".product-list");
-                    const bookingButton = c.querySelector(".booking-button");
+                    const bookingButton = c.querySelector(".styled-button");
                     if (productList) productList.remove();
                     if (bookingButton) bookingButton.remove();
 
@@ -126,11 +129,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Aggiunge la lista di prodotti sotto il testo
                 description.appendChild(productList);
 
-                // Pulsante di prenotazione con URL specifico per ogni card
-                const bookingButton = document.createElement("a");
-                bookingButton.classList.add("booking-button");
+                // Crea il pulsante di prenotazione con testo e stile specifico
+                const bookingButton = document.createElement("button");
+                bookingButton.type = "button";
+                bookingButton.textContent = buttonText;
+                bookingButton.classList.add("styled-button");
 
-                // Usa onclick per forzare l'apertura nella stessa scheda
+                // Imposta l'azione del pulsante in base all'indice
                 switch (index) {
                     case 0:
                         bookingButton.onclick = () => window.location.href = "checkoutbox.html";
@@ -146,17 +151,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                 }
 
-                // Aggiungi immagine e testo al pulsante
-                const buttonImage = document.createElement("img");
-                buttonImage.src = "img/addcart_button.png";
-                buttonImage.alt = buttonText;
-                bookingButton.appendChild(buttonImage);
-
-                const buttonTextEl = document.createElement("span");
-                buttonTextEl.textContent = buttonText;
-                bookingButton.appendChild(buttonTextEl);
-
-                card.appendChild(bookingButton);
+                // Inserisci il pulsante di prenotazione sotto il contenuto del testo `span`
+                description.insertAdjacentElement("afterend", bookingButton);
             }
             // Aggiorna i pallini attivi in base all'indice della card cliccata
             updateDots(index);
@@ -165,18 +161,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Scorrimento del carosello per aggiornare i pallini in base alla posizione
     carousel.addEventListener("scroll", () => {
-        const cardWidth = cards[0].offsetWidth + 16; // Larghezza card + gap
+        const cardWidth = cards[0].offsetWidth + 16;
         const newIndex = Math.round(carousel.scrollLeft / cardWidth);
         updateDots(newIndex);
     });
-
-    // Assegna l'evento clic al pulsante Indietro
-    const backButton = document.getElementById("back-button");
-    if (backButton) {
-        backButton.addEventListener("click", function() {
-            window.history.back(); // Torna alla pagina precedente
-        });
-    } else {
-        console.warn("Il pulsante Indietro non è stato trovato.");
-    }
 });

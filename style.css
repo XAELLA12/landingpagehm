@@ -197,6 +197,31 @@ body {
 
 }
 
+/* Stile pulsanti card */
+.styled-button {
+    width: 60%;
+    padding: 13px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: rgba(21, 19, 41, 0.848); /* Colore di sfondo del pulsante */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 15px; /* Spazio sopra il pulsante */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+}
+
+/* Effetto hover */
+.styled-button:hover {
+    background-color: rgba(21, 19, 41, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombra leggermente più intensa al passaggio del mouse */
+}
+
+
 
 /* Stile per il testo "Scopri di più" */
 .discover-more {
@@ -390,7 +415,7 @@ color: rgba(21, 19, 41, 0.848);
 .checkout-form {
     max-width: 700px;
     width: 100%;
-    margin: 120px auto 40px; /* Spaziatura per evitare che l'header copra il contenuto */
+    margin: 120px auto 60px; /* Spaziatura per evitare che l'header copra il contenuto */
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.15); /* Sfondo trasparente */
     backdrop-filter: blur(10px); /* Effetto sfocatura */
@@ -497,41 +522,25 @@ button[type="submit"]:hover {
     }
 }
 
-/* Stile del pulsante di conferma ordine */
-button#button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: rgba(21, 19, 41, 0.848); /* Colore di sfondo del pulsante */
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 20px;
-}
 
-/* Effetto hover sul pulsante di conferma */
-button#button:hover {
-    background-color: rgba(21, 19, 41, 1);
-}
 
 /* Stile per il pulsante Indietro */
 button#back-button {
-    width: 80%; /* Riduci la larghezza */
+    display: block; /* Assicura che occupi una nuova riga */
+    margin: 30px auto 20px; /* Centro orizzontale con margine superiore */
     padding: 8px; /* Riduci l'altezza */
+    margin-bottom: 50px;
     font-size: 0.9rem; /* Riduci la dimensione del testo */
     font-weight: 500;
     color: #ffffff;
-    background-color: #555555; /* Colore diverso per differenziarlo */
+    background-color: #e41515a7; /* Colore diverso per differenziarlo */
     border: none;
     border-radius: 15px; /* Arrotonda i bordi */
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 10px; /* Spazio tra i pulsanti */
+    width: 50%; /* Larghezza ridotta */
+    
 }
 
 /* Effetto hover sul pulsante Indietro */
