@@ -28,7 +28,7 @@
         <section class="checkout-form">
             <h2>Completa il tuo ordine</h2>
             
-            <form id="order-form">
+            <form id="form">
                 <!-- Servizio scelto -->
                 <div class="form-group">
                     <label for="service">Servizio scelto</label>
@@ -41,6 +41,12 @@
                     <input type="text" id="name" name="name" required>
                 </div>
 
+                <!-- Email del cliente -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
                 <!-- Giorno del servizio -->
                 <div class="form-group">
                     <label for="date">Giorno desiderato</label>
@@ -51,12 +57,12 @@
                 <div class="form-group">
                     <label for="people">Numero di persone</label>
                     <select id="people" name="people" required>
-                        <option value="1-2">1 persona</option>
-                        <option value="1-2">2 persone</option>
-                        <option value="3-4">3 persone</option>
-                        <option value="3-4">4 persone</option>
-                        <option value="5-6">5 persone</option>
-                        <option value="5-6">6 persone</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 persone</option>
+                        <option value="3">3 persone</option>
+                        <option value="4">4 persone</option>
+                        <option value="5">5 persone</option>
+                        <option value="6">6 persone</option>
                     </select>
                 </div>
 
@@ -67,11 +73,13 @@
                 </div>
 
                 <!-- Pulsante di invio -->
-                <button type="submit">Conferma Ordine</button>
+                <button type="submit" id="button">Conferma Ordine!</button>
             </form>
             
             <!-- Messaggio di conferma -->
-            <p id="confirmation-message" style="display:none; color: green; text-align: center;">La tua prenotazione è stata inviata! A breve verrai contattato tramite mail per confermare la tua prenotazione.</p>
+            <p id="confirmation-message" style="display:none; color: green; text-align: center;">
+                La tua prenotazione è stata inviata! A breve verrai contattato tramite mail per confermare la tua prenotazione.
+            </p>
         </section>
     </main>
 
@@ -89,62 +97,58 @@
         </div>
     </footer>
 
-   <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const peopleSelect = document.getElementById("people");
-        const totalInput = document.getElementById("total");
-        const confirmationMessage = document.getElementById("confirmation-message");
-        const orderForm = document.getElementById("order-form");
+    <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const peopleSelect = document.getElementById("people");
+            const totalInput = document.getElementById("total");
+            const confirmationMessage = document.getElementById("confirmation-message");
+            const form = document.getElementById("form");
+            const button = document.getElementById("button");
 
-        function updateTotal() {
-            let total;
-            switch (peopleSelect.value) {
-                case "1-2":
-                    total = 60;
-                    break;
-                case "3-4":
-                    total = 85;
-                    break;
-                case "5-6":
-                    total = 90;
-                    break;
-            }
-            totalInput.value = total + " €";
-        }
-
-        peopleSelect.addEventListener("change", updateTotal);
-        updateTotal();
-
-        orderForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            // Ottieni i valori del modulo
-            const templateParams = {
-                service: document.getElementById("service").value,
-                name: document.getElementById("name").value,
-                date: document.getElementById("date").value,
-                people: document.getElementById("people").value,
-                total: document.getElementById("total").value
-            };
-
-            // Controllo del caricamento di EmailJS
-            if (!emailjs) {
-                console.error("EmailJS non è caricato correttamente.");
-                return;
+            // Calcola il totale in base al numero di persone
+            function updateTotal() {
+                let total;
+                switch (peopleSelect.value) {
+                    case "1":
+                    case "2":
+                        total = 60;
+                        break;
+                    case "3":
+                    case "4":
+                        total = 85;
+                        break;
+                    case "5":
+                    case "6":
+                        total = 90;
+                        break;
+                }
+                totalInput.value = total + " €";
             }
 
-            // Invio dell'email con EmailJS
-            emailjs.send("service_vg22scj", "template_ney6ib9", templateParams)
-                .then(function(response) {
-                    console.log("Email inviata con successo!", response.status, response.text);
-                    orderForm.style.display = "none";
-                    confirmationMessage.style.display = "block";
-                }, function(error) {
-                    console.log("Errore nell'invio dell'email:", error);
-                });
+            peopleSelect.addEventListener("change", updateTotal);
+            updateTotal(); // Calcola il totale iniziale
+
+            // Funzione per inviare l'email
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                button.value = 'Invio in corso...';
+
+                const serviceID = 'service_qo4q1yw';
+                const templateID = 'template_ney6ib9';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        button.value = 'Conferma Ordine!';
+                        form.style.display = "none";
+                        confirmationMessage.style.display = "block";
+                    }, (err) => {
+                        button.value = 'Conferma Ordine!';
+                        alert(JSON.stringify(err));
+                    });
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
