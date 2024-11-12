@@ -278,7 +278,7 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #f0eff0;
+    border: 4px solid  rgba(255, 255, 255, 0.926);;
     transition: width 0.3s ease, height 0.3s ease;
 }
 
@@ -381,3 +381,4 @@ color: rgba(21, 19, 41, 0.848);
     justify-content: space-between;
     align-items: center;
 }
+
