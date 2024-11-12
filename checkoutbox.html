@@ -89,56 +89,62 @@
         </div>
     </footer>
 
-    <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const peopleSelect = document.getElementById("people");
-            const totalInput = document.getElementById("total");
-            const confirmationMessage = document.getElementById("confirmation-message");
-            const orderForm = document.getElementById("order-form");
+   <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const peopleSelect = document.getElementById("people");
+        const totalInput = document.getElementById("total");
+        const confirmationMessage = document.getElementById("confirmation-message");
+        const orderForm = document.getElementById("order-form");
 
-            function updateTotal() {
-                let total;
-                switch (peopleSelect.value) {
-                    case "1-2":
-                        total = 60;
-                        break;
-                    case "3-4":
-                        total = 85;
-                        break;
-                    case "5-6":
-                        total = 90;
-                        break;
-                }
-                totalInput.value = total + " €";
+        function updateTotal() {
+            let total;
+            switch (peopleSelect.value) {
+                case "1-2":
+                    total = 60;
+                    break;
+                case "3-4":
+                    total = 85;
+                    break;
+                case "5-6":
+                    total = 90;
+                    break;
+            }
+            totalInput.value = total + " €";
+        }
+
+        peopleSelect.addEventListener("change", updateTotal);
+        updateTotal();
+
+        orderForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Ottieni i valori del modulo
+            const templateParams = {
+                service: document.getElementById("service").value,
+                name: document.getElementById("name").value,
+                date: document.getElementById("date").value,
+                people: document.getElementById("people").value,
+                total: document.getElementById("total").value
+            };
+
+            // Controllo del caricamento di EmailJS
+            if (!emailjs) {
+                console.error("EmailJS non è caricato correttamente.");
+                return;
             }
 
-            peopleSelect.addEventListener("change", updateTotal);
-            updateTotal();
-
-            orderForm.addEventListener("submit", function(event) {
-                event.preventDefault();
-
-                // Ottieni i valori del modulo
-                const templateParams = {
-                    service: document.getElementById("service").value,
-                    name: document.getElementById("name").value,
-                    date: document.getElementById("date").value,
-                    people: document.getElementById("people").value,
-                    total: document.getElementById("total").value
-                };
-
-                // Invio dell'email con EmailJS
-                emailjs.send("service_vg22scj", "template_ney6ib9", templateParams)
-                    .then(function(response) {
-                        console.log("Email inviata con successo!", response.status, response.text);
-                        orderForm.style.display = "none";
-                        confirmationMessage.style.display = "block";
-                    }, function(error) {
-                        console.log("Errore nell'invio dell'email:", error);
-                    });
-            });
+            // Invio dell'email con EmailJS
+            emailjs.send("service_vg22scj", "template_ney6ib9", templateParams)
+                .then(function(response) {
+                    console.log("Email inviata con successo!", response.status, response.text);
+                    orderForm.style.display = "none";
+                    confirmationMessage.style.display = "block";
+                }, function(error) {
+                    console.log("Errore nell'invio dell'email:", error);
+                });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
