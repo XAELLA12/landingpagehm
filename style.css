@@ -4,8 +4,6 @@
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     padding: 15px 30px;
-    backdrop-filter: blur(8px); /* Effetto blur leggero */
-    background-color: rgba(255, 255, 255, 0.6); /* Trasparenza */
     position: fixed;
     top: 0;
     left: 0;
@@ -15,10 +13,9 @@
 
 /* Stile del logo */
 .logo {
-    height: 50px;
+    height: 45px;
     width: auto;
-    position: absolute;
-    left: 30px; /* Distanza dal bordo sinistro */
+    margin-right: 10px;
 }
 
 /* Stile del testo nell'header */
