@@ -428,6 +428,7 @@ color: rgba(21, 19, 41, 0.848);
 /* Stile degli input */
 .form-group input[type="text"],
 .form-group input[type="date"],
+.form-group input[type="email"],
 .form-group textarea,
 .form-group select {
     width: 100%;
@@ -445,6 +446,7 @@ color: rgba(21, 19, 41, 0.848);
 /* Cambia colore del bordo all'hover e al focus */
 .form-group input[type="text"]:focus,
 .form-group input[type="date"]:focus,
+.form-group input[type="email"]:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: rgba(21, 19, 41, 0.7);
@@ -495,39 +497,44 @@ button[type="submit"]:hover {
     }
 }
 
-/* Stile del pulsante Indietro */
-.checkout-form {
-    position: relative; /* Rendi la card di checkout relativa per allineare il pulsante */
-}
-
-/* Stile del pulsante Indietro */
-.back-button {
-    position: absolute;
-    margin-top: 110px; /* Allinea verticalmente con l'inizio della card */
-    left: 10px; /* Posiziona il pulsante a sinistra della card */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #142333cb;
-    color: #fff;
+/* Stile del pulsante di conferma ordine */
+button#button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: rgba(21, 19, 41, 0.848); /* Colore di sfondo del pulsante */
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+    border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 20px;
 }
 
-.back-button:hover {
-    background-color: #0056b3;
+/* Effetto hover sul pulsante di conferma */
+button#button:hover {
+    background-color: rgba(21, 19, 41, 1);
 }
 
-.back-button i {
-    display: inline-block;
-    border: solid #fff;
-    border-width: 0 3px 3px 0;
-    padding: 5px;
-    transform: rotate(135deg);
+/* Stile per il pulsante Indietro */
+button#back-button {
+    width: 80%; /* Riduci la larghezza */
+    padding: 8px; /* Riduci l'altezza */
+    font-size: 0.9rem; /* Riduci la dimensione del testo */
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #555555; /* Colore diverso per differenziarlo */
+    border: none;
+    border-radius: 15px; /* Arrotonda i bordi */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10px; /* Spazio tra i pulsanti */
+}
+
+/* Effetto hover sul pulsante Indietro */
+button#back-button:hover {
+    background-color: #333333;
 }

@@ -24,11 +24,6 @@
         </div>
     </header>
 
-      <!-- Pulsante Indietro fuori dal contenitore del checkout -->
-      <button class="back-button" onclick="window.location.href='index.html'">
-        <i></i>
-    </button>
-
     <!-- Checkout Form -->
     <main>
         <section class="checkout-form">
@@ -43,7 +38,7 @@
 
                 <!-- Nome del cliente -->
                 <div class="form-group">
-                    <label for="name">Nome</label>
+                    <label for="name">Nome della prenotazione</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
@@ -55,13 +50,13 @@
 
                 <!-- Giorno del servizio -->
                 <div class="form-group">
-                    <label for="date">Giorno desiderato</label>
+                    <label for="date">Quando?</label>
                     <input type="date" id="date" name="date" required>
                 </div>
 
                 <!-- Numero di persone -->
                 <div class="form-group">
-                    <label for="people">Numero di persone</label>
+                    <label for="people">In quanti siete?</label>
                     <select id="people" name="people" required>
                         <option value="1">1 persona</option>
                         <option value="2">2 persone</option>
@@ -74,12 +69,15 @@
 
                 <!-- Totale -->
                 <div class="form-group">
-                    <label for="total">Totale (€)</label>
+                    <label for="total">Costo</label>
                     <input type="text" id="total" name="total" readonly>
                 </div>
 
                 <!-- Pulsante di invio -->
-                <button type="submit" id="button">Conferma Ordine!</button>
+                <button type="submit" id="button">Richiedi la tua Box!</button>
+
+                <!-- Pulsante Indietro più piccolo -->
+                <button type="button" id="back-button">Indietro</button>
             </form>
             
             <!-- Messaggio di conferma -->
@@ -105,56 +103,76 @@
 
     <!-- Script per calcolare il totale e inviare l'email con EmailJS -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const peopleSelect = document.getElementById("people");
-            const totalInput = document.getElementById("total");
-            const confirmationMessage = document.getElementById("confirmation-message");
-            const form = document.getElementById("form");
-            const button = document.getElementById("button");
 
-            // Calcola il totale in base al numero di persone
-            function updateTotal() {
-                let total;
-                switch (peopleSelect.value) {
-                    case "1":
-                    case "2":
-                        total = 60;
-                        break;
-                    case "3":
-                    case "4":
-                        total = 85;
-                        break;
-                    case "5":
-                    case "6":
-                        total = 90;
-                        break;
-                }
-                totalInput.value = total + " €";
-            }
 
-            peopleSelect.addEventListener("change", updateTotal);
-            updateTotal(); // Calcola il totale iniziale
+document.addEventListener("DOMContentLoaded", function() {
+    const peopleSelect = document.getElementById("people");
+    const totalInput = document.getElementById("total");
+    const confirmationMessage = document.getElementById("confirmation-message");
+    const form = document.getElementById("form");
+    const button = document.getElementById("button");
+    const backButton = document.getElementById("back-button");
+    const dateInput = document.getElementById("date");
 
-            // Funzione per inviare l'email
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
+    // Imposta la data minima del calendario al giorno successivo
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const minDate = tomorrow.toISOString().split("T")[0];
+    dateInput.setAttribute("min", minDate);
 
-                button.value = 'Invio in corso...';
+    // Calcola il totale in base al numero di persone
+    function updateTotal() {
+        let total;
+        switch (peopleSelect.value) {
+            case "1":
+            case "2":
+                total = 60;
+                break;
+            case "3":
+            case "4":
+                total = 85;
+                break;
+            case "5":
+            case "6":
+                total = 90;
+                break;
+        }
+        totalInput.value = total + " €";
+    }
 
-                const serviceID = 'service_qo4q1yw';
-                const templateID = 'template_ney6ib9';
+    peopleSelect.addEventListener("change", updateTotal);
+    updateTotal(); // Calcola il totale iniziale
 
-                emailjs.sendForm(serviceID, templateID, this)
-                    .then(() => {
-                        button.value = 'Conferma Ordine!';
-                        form.style.display = "none";
-                        confirmationMessage.style.display = "block";
-                    }, (err) => {
-                        button.value = 'Conferma Ordine!';
-                        alert(JSON.stringify(err));
-                    });
+    // Funzione per inviare l'email
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        button.value = 'Invio in corso...';
+
+        const serviceID = 'service_qo4q1yw';
+        const templateID = 'template_ney6ib9';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                button.value = 'Conferma Ordine!';
+                form.style.display = "none";
+                confirmationMessage.style.display = "block";
+            }, (err) => {
+                button.value = 'Conferma Ordine!';
+                alert(JSON.stringify(err));
             });
-        });
+    });
+
+    // Funzione per il pulsante "Indietro" che torna alla pagina precedente
+    backButton.addEventListener("click", function() {
+        window.history.back();
+    });
+});
+
+
+
+
     </script>
 </body>
 </html>

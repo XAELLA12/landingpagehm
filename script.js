@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
-
-    // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
         "La nostra selezione di prodotti locali direttamente a casa tua!",
         "Un'autentica esperienza di cena romana a casa tua!",
@@ -130,23 +128,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Pulsante di prenotazione con URL specifico per ogni card
                 const bookingButton = document.createElement("a");
+                bookingButton.classList.add("booking-button");
+
+                // Usa onclick per forzare l'apertura nella stessa scheda
                 switch (index) {
                     case 0:
-                        bookingButton.href = "checkoutbox.html";
+                        bookingButton.onclick = () => window.location.href = "checkoutbox.html";
                         break;
                     case 1:
-                        bookingButton.href = "checkoutchef.html";
+                        bookingButton.onclick = () => window.location.href = "checkoutchef.html";
                         break;
                     case 2:
-                        bookingButton.href = "checkoutaperitivo.html";
+                        bookingButton.onclick = () => window.location.href = "checkoutaperitivo.html";
                         break;
                     case 3:
-                        bookingButton.href = "checkoutfoodtour.html";
+                        bookingButton.onclick = () => window.location.href = "checkoutfoodtour.html";
                         break;
                 }
-                bookingButton.classList.add("booking-button");
-                bookingButton.target = "_blank";
 
+                // Aggiungi immagine e testo al pulsante
                 const buttonImage = document.createElement("img");
                 buttonImage.src = "img/addcart_button.png";
                 buttonImage.alt = buttonText;
@@ -169,4 +169,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const newIndex = Math.round(carousel.scrollLeft / cardWidth);
         updateDots(newIndex);
     });
+
+    // Assegna l'evento clic al pulsante Indietro
+    const backButton = document.getElementById("back-button");
+    if (backButton) {
+        backButton.addEventListener("click", function() {
+            window.history.back(); // Torna alla pagina precedente
+        });
+    } else {
+        console.warn("Il pulsante Indietro non è stato trovato.");
+    }
 });
