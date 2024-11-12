@@ -382,3 +382,115 @@ color: rgba(21, 19, 41, 0.848);
     align-items: center;
 }
 
+
+
+
+
+/* Stile della sezione di checkout */
+.checkout-form {
+    max-width: 700px;
+    width: 100%;
+    margin: 120px auto 40px; /* Spaziatura per evitare che l'header copra il contenuto */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.15); /* Sfondo trasparente */
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+    border-radius: 25px; /* Arrotonda i bordi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    text-align: center;
+}
+
+/* Stile per i titoli e i paragrafi */
+.checkout-form h2 {
+    font-size: 1.8rem;
+    color: rgba(21, 19, 41, 0.848);
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Stile dei gruppi di input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: rgba(21, 19, 41, 0.848);
+}
+
+/* Stile per le etichette */
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Stile degli input */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(21, 19, 41, 0.3);
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo leggermente trasparente */
+    color: rgba(21, 19, 41, 0.848);
+    font-size: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambia colore del bordo all'hover e al focus */
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: rgba(21, 19, 41, 0.7);
+}
+
+/* Stile del campo Totale (solo lettura) */
+#total {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    color: rgba(21, 19, 41, 0.848);
+}
+
+/* Stile del textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Pulsante di conferma ordine */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: rgba(21, 19, 41, 0.848); /* Colore di sfondo del pulsante */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Effetto hover sul pulsante */
+button[type="submit"]:hover {
+    background-color: rgba(21, 19, 41, 1);
+}
+
+/* Stile responsivo per dispositivi mobili */
+@media (max-width: 600px) {
+    .checkout-form {
+        padding: 20px;
+        margin: 100px auto 20px;
+    }
+
+    .checkout-form h2 {
+        font-size: 1.5rem;
+    }
+}

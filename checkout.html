@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Home Made</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="img/logo2.png" alt="Logo Home Made" class="logo">
+        <div class="header-text">
+            <h1>HOME MADE</h1>
+            <p>our hospitality concept</p>
+        </div>
+    </header>
+
+    <!-- Checkout Form -->
+    <main>
+        <section class="checkout-form">
+            <h2>Completa il tuo ordine</h2>
+            
+            <form id="order-form">
+                <!-- Servizio scelto -->
+                <div class="form-group">
+                    <label for="service">Servizio scelto</label>
+                    <input type="text" id="service" name="service" value="Nome del servizio" readonly>
+                </div>
+
+                <!-- Nome del cliente -->
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- Giorno del servizio -->
+                <div class="form-group">
+                    <label for="date">Giorno desiderato</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <!-- Allergeni -->
+                <div class="form-group">
+                    <label for="allergens">Allergeni</label>
+                    <textarea id="allergens" name="allergens" placeholder="Indica eventuali allergeni..."></textarea>
+                </div>
+
+                <!-- Numero di persone -->
+                <div class="form-group">
+                    <label for="people">Numero di persone</label>
+                    <select id="people" name="people" required>
+                        <option value="1-2">1-2 persone</option>
+                        <option value="3-4">3-4 persone</option>
+                        <option value="5-6">5-6 persone</option>
+                    </select>
+                </div>
+
+                <!-- Totale -->
+                <div class="form-group">
+                    <label for="total">Totale (€)</label>
+                    <input type="text" id="total" name="total" readonly>
+                </div>
+
+                <!-- Pulsante di invio -->
+                <button type="submit">Conferma Ordine</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">&copy; Home Made. All rights reserved.</p> 
+            <div class="language-selector-footer">
+                <label for="language-footer">Lingua:</label>
+                <select name="language-footer" id="language-footer">
+                    <option value="it">Italiano</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script per calcolare il totale e recuperare il servizio selezionato -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Calcola il totale in base al numero di persone
+            const peopleSelect = document.getElementById("people");
+            const totalInput = document.getElementById("total");
+
+            function updateTotal() {
+                let total;
+                switch (peopleSelect.value) {
+                    case "1-2":
+                        total = 60;
+                        break;
+                    case "3-4":
+                        total = 85;
+                        break;
+                    case "5-6":
+                        total = 90;
+                        break;
+                }
+                totalInput.value = total + " €";
+            }
+
+            peopleSelect.addEventListener("change", updateTotal);
+            updateTotal(); // Calcola il totale iniziale
+
+            // Recupera il servizio selezionato e inseriscilo nel campo "Servizio scelto"
+            const serviceName = localStorage.getItem("selectedService");
+            if (serviceName) {
+                document.getElementById("service").value = serviceName;
+                localStorage.removeItem("selectedService"); // Rimuove il valore dopo l'uso
+            }
+        });
+    </script>
+</body>
+</html>
