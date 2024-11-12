@@ -128,9 +128,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Aggiunge la lista di prodotti sotto il testo
                 description.appendChild(productList);
 
-                // Pulsante di prenotazione
+                // Pulsante di prenotazione con URL specifico per ogni card
                 const bookingButton = document.createElement("a");
-                bookingButton.href = "checkout.html";
+                switch (index) {
+                    case 0:
+                        bookingButton.href = "checkoutbox.html";
+                        break;
+                    case 1:
+                        bookingButton.href = "checkoutchef.html";
+                        break;
+                    case 2:
+                        bookingButton.href = "checkoutaperitivo.html";
+                        break;
+                    case 3:
+                        bookingButton.href = "checkoutfoodtour.html";
+                        break;
+                }
                 bookingButton.classList.add("booking-button");
                 bookingButton.target = "_blank";
 
@@ -157,11 +170,3 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDots(newIndex);
     });
 });
-
-
-
-
-
-
-
-
