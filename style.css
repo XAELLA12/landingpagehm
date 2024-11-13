@@ -194,7 +194,6 @@ body {
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
     height: 520px; /* Altezza aumentata */
-
 }
 
 /* Stile pulsanti card */
@@ -251,7 +250,7 @@ body {
 }
 
 .product-list li {
-    font-size: 14px;
+    font-size: 12px;
     color: #151329a9;
     margin: 5px 0;
 }

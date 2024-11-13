@@ -27,18 +27,18 @@
     <!-- Checkout Form -->
     <main>
         <section class="checkout-form">
-            <h2>Completa il tuo ordine</h2>
+            <h2>Complete your order</h2>
             
             <form id="form">
                 <!-- Servizio scelto -->
                 <div class="form-group">
-                    <label for="service">Servizio scelto</label>
+                    <label for="service">Your selected service</label>
                     <input type="text" id="service" name="service" value="Box di benvenuto" readonly>
                 </div>
 
                 <!-- Nome del cliente -->
                 <div class="form-group">
-                    <label for="name">Nome della prenotazione</label>
+                    <label for="name">Name on the reservation</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
@@ -50,39 +50,39 @@
 
                 <!-- Giorno del servizio -->
                 <div class="form-group">
-                    <label for="date">Quando?</label>
+                    <label for="date">When?</label>
                     <input type="date" id="date" name="date" required>
                 </div>
 
                 <!-- Numero di persone -->
                 <div class="form-group">
-                    <label for="people">In quanti siete?</label>
+                    <label for="people">How many?</label>
                     <select id="people" name="people" required>
-                        <option value="1">1 persona</option>
-                        <option value="2">2 persone</option>
-                        <option value="3">3 persone</option>
-                        <option value="4">4 persone</option>
-                        <option value="5">5 persone</option>
-                        <option value="6">6 persone</option>
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 </option>
+                        <option value="6">6 </option>
                     </select>
                 </div>
 
                 <!-- Totale -->
                 <div class="form-group">
-                    <label for="total">Costo</label>
+                    <label for="total">Total</label>
                     <input type="text" id="total" name="total" readonly>
                 </div>
 
                 <!-- Pulsante di invio -->
-                <button type="submit" id="button">Richiedi la tua Box!</button>
+                <button type="submit" id="button">Request your service!</button>
             
             <!-- Messaggio di conferma -->
             <p id="confirmation-message" style="display:none; color: green; text-align: center;">
-                La tua prenotazione è stata inviata! A breve verrai contattato tramite mail per confermare la tua prenotazione.
+                Your reservation has been successfully submitted! You will be contacted shortly via email to confirm your order.
             </p>
         </section>
          <!-- Pulsante Indietro fuori dal checkout-form -->
-    <button type="button" id="back-button">Indietro</button>
+    <button type="button" id="back-button">Back</button>
 </main>
     </main>
 

@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
-        "La nostra selezione di prodotti locali direttamente a casa tua!",
-        "Un'autentica esperienza di cena romana a casa tua!",
+        "Enjoy your holiday with our delicious Roman delicacies!",
+        "Your authentically Italian evening with us!",
         "Prepareremo un aperitivo in stile Italiano direttamente a casa vostra!",
-        "Cammianta culinaria nei vicoli di Roma"
+        "Get ready to tour the city with the best food Rome has to offer!"
     ];
 
     // Crea i pallini in base al numero di card
@@ -102,20 +102,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Definisce i prodotti e il testo del pulsante in base alla card
                 switch(index) {
                     case 0:
-                        products = ["Bottiglia di Vino", "Tarallucci", "Formaggio Pecorino", "Salame", "Mozzarella di Bufala", "Prosciutto", "Ciambelline al Vino", "---", "a partire da 60€"];
-                        buttonText = "Richiedilo ora!";
+                        products = [ "Bottle of wine form our Region", "Tarallucci", "Pecorino Cheese", "Green Aperitif Olives", "Selection of hams", "Selection of salamis", "Buffalo mozzarella", "white pizza", "wine donuts", "---", "Da 105€"];
+                        buttonText = "Reserve Your Box!";
                         break;
                     case 1:
-                        products = ["Al momento della prenotazione comporrete insieme allo Chef un Menu su misura per voi!", "---", "90€ a persona"];
-                        buttonText = "Prenota ora!";
+                        products = ["We will prepare a Roman dinner with dishes that represent our history, the deepest anecdotes in an unforgettable culinary journey. Look at our genuine menu proposal or write us and we will create a tailor-made expirience for you!", "---", "Roman Panzanella", "Supplì and courgette flowers" , "Tasting of pasta Carbonara and pasta Cacio e Pepe" , "Testing of Roman tripe" , "Testing of Saltimbocca alla Romana", "Tiramisù", "Tozzetti and Vinosanto","---", "Price per person: 95€"];
+                        buttonText = "Reserve it!";
                         break;
                     case 2:
-                        products = ["Selezione di salumi", "Parmiggiano Reggiano", "Mozzarella di Bufala", "Pizza Bianca", "Mix di Bruschette", "Fritti Romani", "Prosecco/Champagne", "---", "60€ a persona"];
-                        buttonText = "Prenota ora!";
+                        products = ["Choose our aperitif designed specifically to let you savor our most authentic products with the complicity of mind-bogggling cocktails", "---" ,"Selection of cured meats", "Parmiggiano Reggiano", "Buffalo Mozzarella", "White Pizza", "Bruschetta mix", "Typical Roman fried foods", "Bubbles", "Cocktails to be agreed together" , "---", "Price per person: 65€"];
+                        buttonText = "Reserve Your Aperitif!";
                         break;
                     case 3:
-                        products = ["Ti accompagneremo in una passeggiata nei magici vicoli di Roma per scoprire i suoi piatti tipici", "---", "40€ a persona"];
-                        buttonText = "Prenota ora!";
+                        products = ["Our local guide will lead you through the most authenic alleys to taste the delicicacies of the oldest bakeries, the most prestigious delicatessens and wine bars offering the best natural wines ever", "---", "Estimated tour time: 3.5 hours", "---", "Price per person: 110€ ",];
+                        buttonText = "Reserve Your Tour!";
                         break;
                 }
 
