@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
-        "Enjoy your holiday with our delicious Roman delicacies!",
+        "Enjoy your holiday with our delicious Roman delicacies! Choose our Box with the best local products to recive directly upon your arrival",
         "Your authentically Italian evening with us!",
         "Prepareremo un aperitivo in stile Italiano direttamente a casa vostra!",
         "Get ready to tour the city with the best food Rome has to offer!"
