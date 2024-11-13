@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
 
+
     // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
         "Enjoy your holiday with our delicious Roman delicacies! Choose our Box with the best local products to recive directly upon your arrival",
