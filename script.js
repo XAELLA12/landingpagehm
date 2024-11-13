@@ -4,6 +4,54 @@ document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
 
+    // Definizione delle traduzioni
+    const resources = {
+        en: {
+            translation: {
+                "header.title": "HOME MADE",
+                "header.subtitle": "our hospitality concept",
+                "card1.title": "Our Grocery Delivery",
+                "card1.description": "Enjoy your holiday with our delicious Roman delicacies!...",
+                "footer.language": "Language:"
+                // Aggiungi tutte le chiavi di traduzione
+            }
+        },
+        it: {
+            translation: {
+                "header.title": "FATTO IN CASA",
+                "header.subtitle": "il nostro concetto di ospitalità",
+                "card1.title": "Consegna della Spesa",
+                "card1.description": "Goditi la tua vacanza con le nostre delizie romane...",
+                "footer.language": "Lingua:"
+                // Aggiungi le traduzioni italiane
+            }
+        }
+    };
+
+    // Inizializza i18next
+    i18next.init({
+        lng: 'en',
+        debug: true,
+        resources
+    }, (err, t) => {
+        // Applica le traduzioni iniziali
+        updateContent();
+    });
+
+    // Funzione per aggiornare il contenuto
+    function updateContent() {
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+            const key = element.getAttribute("data-i18n");
+            element.textContent = i18next.t(key);
+        });
+    }
+
+    // Aggiungi evento per cambiare lingua
+    document.getElementById("language-footer").addEventListener("change", (event) => {
+        const selectedLanguage = event.target.value;
+        i18next.changeLanguage(selectedLanguage, updateContent);
+    });
+
 
     // Descrizioni iniziali per ciascuna card
     const initialDescriptions = [
