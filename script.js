@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
-    let currentLang = 'en'; // Lingua predefinita
 
-     // Definizioni delle pagine di checkout per ogni card
-     const checkoutPages = [
+    // Imposta la lingua corrente, con l'inglese come predefinita o leggendola da localStorage
+    let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
+    // Definizioni delle pagine di checkout per ogni card
+    const checkoutPages = [
         "checkoutbox.html",
         "checkoutchef.html",
         "checkoutaperitivo.html",
@@ -30,14 +32,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Funzione per cambiare lingua
+    // Funzione per cambiare lingua e salvare la scelta in localStorage
     function changeLanguage(lang) {
         currentLang = lang;
+        localStorage.setItem('preferredLanguage', lang); // Salva la lingua in localStorage
         document.querySelectorAll("[data-i18n]").forEach(element => {
             const key = element.getAttribute("data-i18n");
             element.textContent = translations[lang][key] || element.textContent;
         });
     }
+      // Evento per il cambio lingua e salva la preferenza
+      document.getElementById("language-footer").addEventListener("change", (event) => {
+        const selectedLanguage = event.target.value;
+        changeLanguage(selectedLanguage);
+    });
+
+    // Imposta la lingua iniziale basata su localStorage
+    changeLanguage(currentLang);
+    document.getElementById("language-footer").value = currentLang;
+    
+   
 
     // Funzione per mostrare o nascondere il body text
     function toggleBodyText(visible) {
@@ -125,8 +139,9 @@ document.addEventListener("DOMContentLoaded", function() {
         changeLanguage(selectedLanguage);
     });
 
-    // Imposta la lingua predefinita
+    // Imposta la lingua iniziale basata su localStorage
     changeLanguage(currentLang);
+    document.getElementById("language-footer").value = currentLang;
 
     // Scorrimento del carosello per aggiornare i pallini in base alla posizione
     carousel.addEventListener("scroll", () => {
@@ -135,5 +150,3 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDots(newIndex);
     });
 });
-
-
