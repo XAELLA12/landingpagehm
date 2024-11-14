@@ -80,7 +80,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('img/marmo.png');
+    background-image: url(img/trysfondo.jpg);
+
     background-repeat: no-repeat; /* Evita che l’immagine si ripeta */
     background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
     background-position: center; /* Centra l’immagine */
@@ -108,7 +109,7 @@ body {
     position: relative;
     border-radius: 35px; /* Imposta l'arrotondamento del bordo */
     overflow: hidden; /* Nasconde eventuali elementi che escono dal bordo */
-    background-color: rgba(255, 255, 255, 0.1); /* Colore di sfondo opzionale */
+
 }
 
 /* pulsanti laterali di navigazione */
@@ -199,7 +200,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2); /* Sfondo bianco trasparente */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
-    border: 1px solid hwb(0 100% 0%);
+    border: 0.3px solid hwb(0 100% 0%);
     border-radius: 40px;
     display: flex;
     cursor: pointer;
