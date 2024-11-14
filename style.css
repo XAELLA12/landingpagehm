@@ -200,14 +200,14 @@ body {
 
 /* Stile pulsanti card */
 .styled-button {
-    width: 60%;
-    padding: 13px;
+    width: 100%;
+    padding: 11px;
     font-size: 1.1rem;
     font-weight: 600;
     color: #ffffff;
     background-color: rgba(21, 19, 41, 0.848); /* Colore di sfondo del pulsante */
     border: none;
-    border-radius: 20px;
+    border-radius: 19px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Roboto Condensed', sans-serif;

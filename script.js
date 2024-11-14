@@ -3,23 +3,86 @@ document.addEventListener("DOMContentLoaded", function() {
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
+    let currentLang = 'en'; // Lingua predefinita
 
-
-    // Descrizioni iniziali per ciascuna card
-    const initialDescriptions = [
-        "Enjoy your holiday with our delicious Roman delicacies! Choose our Box with the best local products to recive directly upon your arrival",
-        "Your authentically Italian evening with us!",
-        "Prepareremo un aperitivo in stile Italiano direttamente a casa vostra!",
-        "Get ready to tour the city with the best food Rome has to offer!"
+     // Definizioni delle pagine di checkout per ogni card
+     const checkoutPages = [
+        "checkoutbox.html",
+        "checkoutchef.html",
+        "checkoutaperitivo.html",
+        "checkoutfoodtour.html"
     ];
 
-    // Crea i pallini in base al numero di card
+    const translations = {
+        en: {
+            "header.title": "HOME MADE",
+            "header.subtitle": "our hospitality concept",
+            "footer.language": "Language:",
+            "discover.more": "Discover more",
+            "body.text": "At HomeMade, we invite you to enhance your journey in Rome with our selection of culinary experiences, crafted to add a unique flavor to your stay!"
+        },
+        it: {
+            "header.title": "FATTO IN CASA",
+            "header.subtitle": "il nostro concetto di ospitalità",
+            "footer.language": "Lingua:",
+            "discover.more": "Scopri di più",
+            "body.text": "Da HomeMade, ti invitiamo a migliorare il tuo viaggio a Roma con la nostra selezione di esperienze culinarie, pensate per aggiungere un sapore unico al tuo soggiorno!"
+        }
+    };
+
+    // Funzione per cambiare lingua
+    function changeLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+            const key = element.getAttribute("data-i18n");
+            element.textContent = translations[lang][key] || element.textContent;
+        });
+    }
+
+    // Funzione per mostrare o nascondere il body text
+    function toggleBodyText(visible) {
+        bodyText.style.display = visible ? "block" : "none";
+    }
+
+    // Funzione per espandere una card e mostrare i dettagli
+    function toggleCardExpansion(card, index) {
+        const isExpanded = card.classList.contains("expanded");
+        const descriptionText = card.querySelector("span[data-i18n]"); // Seleziona la descrizione principale
+
+        if (isExpanded) {
+            // Chiudi la card
+            card.classList.remove("expanded");
+            toggleBodyText(true);
+            const expandedContent = card.querySelector(".expanded-content");
+            if (expandedContent) expandedContent.classList.add("hidden");
+            if (descriptionText) descriptionText.style.display = ''; // Mostra la descrizione principale
+        } else {
+            // Chiude tutte le altre card e apre quella selezionata
+            cards.forEach((c) => {
+                c.classList.remove("expanded");
+                const expandedContent = c.querySelector(".expanded-content");
+                if (expandedContent) expandedContent.classList.add("hidden");
+                const otherDescription = c.querySelector("span[data-i18n]");
+                if (otherDescription) otherDescription.style.display = ''; // Mostra la descrizione principale
+            });
+
+            toggleBodyText(false);
+            card.classList.add("expanded");
+
+            // Nasconde la descrizione principale e mostra i contenuti espansi
+            if (descriptionText) descriptionText.style.display = 'none';
+            const expandedContent = card.querySelector(".expanded-content");
+            if (expandedContent) expandedContent.classList.remove("hidden");
+        }
+    }
+
+    // Funzione per creare i pallini di navigazione per ciascuna card
     cards.forEach((_, index) => {
         const dot = document.createElement("span");
         dot.classList.add("dot");
         if (index === 0) dot.classList.add("active"); // Imposta il primo pallino come attivo all'inizio
         dotsContainer.appendChild(dot);
-        
+
         // Aggiunge evento di click al pallino per scorrere alla card corrispondente
         dot.addEventListener("click", () => {
             scrollToCard(index);
@@ -42,123 +105,28 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDots(index);
     }
 
-    // Funzione per mostrare o nascondere il body text
-    function toggleBodyText(visible) {
-        bodyText.style.display = visible ? "block" : "none";
-    }
-
     // Aggiunge evento di click a ogni card per espandere/chiudere
     cards.forEach((card, index) => {
-        card.addEventListener("click", () => {
-            const isExpanded = card.classList.contains("expanded");
+        card.addEventListener("click", () => toggleCardExpansion(card, index));
 
-            // Se la card è già espansa, la richiude
-            if (isExpanded) {
-                card.classList.remove("expanded");
-
-                // Rimuove contenuti specifici di espansione
-                const productList = card.querySelector(".product-list");
-                const bookingButton = card.querySelector(".styled-button"); // Riferimento al pulsante con la classe
-
-                if (productList) productList.remove();
-                if (bookingButton) bookingButton.remove();
-
-                // Ripristina il testo originale specifico per ciascuna card
-                const description = card.querySelector("span");
-                description.textContent = initialDescriptions[index]; // Usa la descrizione iniziale specifica
-
-                // Mostra il body text quando tutte le card sono chiuse
-                if (![...cards].some(c => c.classList.contains("expanded"))) {
-                    toggleBodyText(true);
-                }
-            } else {
-                // Chiude tutte le altre card e apre quella selezionata
-                cards.forEach((c, i) => {
-                    c.classList.remove("expanded");
-                    const productList = c.querySelector(".product-list");
-                    const bookingButton = c.querySelector(".styled-button");
-                    if (productList) productList.remove();
-                    if (bookingButton) bookingButton.remove();
-
-                    // Ripristina il testo originale specifico per ogni card
-                    const description = c.querySelector("span");
-                    description.textContent = initialDescriptions[i]; // Usa la descrizione iniziale specifica
-                });
-
-                // Nasconde il body text e aggiunge l'espansione alla card selezionata
-                toggleBodyText(false);
-                card.classList.add("expanded");
-
-                // Cambia il contenuto del testo con una lista di prodotti
-                const description = card.querySelector("span");
-                description.textContent = ""; // Svuota il testo originale
-
-                const productList = document.createElement("ul");
-                productList.classList.add("product-list");
-
-                // Lista dei prodotti specifici per ciascuna card
-                let products;
-                let buttonText;
-
-                // Definisce i prodotti e il testo del pulsante in base alla card
-                switch(index) {
-                    case 0:
-                        products = [ "Bottle of wine form our Region", "Tarallucci", "Pecorino Cheese", "Green Aperitif Olives", "Selection of hams", "Selection of salamis", "Buffalo mozzarella", "white pizza", "wine donuts", "---", "Da 105€"];
-                        buttonText = "Reserve Your Box!";
-                        break;
-                    case 1:
-                        products = ["We will prepare a Roman dinner with dishes that represent our history, the deepest anecdotes in an unforgettable culinary journey. Look at our genuine menu proposal or write us and we will create a tailor-made expirience for you!", "---", "Roman Panzanella", "Supplì and courgette flowers" , "Tasting of pasta Carbonara and pasta Cacio e Pepe" , "Testing of Roman tripe" , "Testing of Saltimbocca alla Romana", "Tiramisù", "Tozzetti and Vinosanto","---", "Price per person: 95€"];
-                        buttonText = "Reserve it!";
-                        break;
-                    case 2:
-                        products = ["Choose our aperitif designed specifically to let you savor our most authentic products with the complicity of mind-bogggling cocktails", "---" ,"Selection of cured meats", "Parmiggiano Reggiano", "Buffalo Mozzarella", "White Pizza", "Bruschetta mix", "Typical Roman fried foods", "Bubbles", "Cocktails to be agreed together" , "---", "Price per person: 65€"];
-                        buttonText = "Reserve Your Aperitif!";
-                        break;
-                    case 3:
-                        products = ["Our local guide will lead you through the most authenic alleys to taste the delicicacies of the oldest bakeries, the most prestigious delicatessens and wine bars offering the best natural wines ever", "---", "Estimated tour time: 3.5 hours", "---", "Price per person: 110€ ",];
-                        buttonText = "Reserve Your Tour!";
-                        break;
-                }
-
-                // Crea gli elementi della lista dei prodotti
-                products.forEach(product => {
-                    const listItem = document.createElement("li");
-                    listItem.textContent = product;
-                    productList.appendChild(listItem);
-                });
-
-                // Aggiunge la lista di prodotti sotto il testo
-                description.appendChild(productList);
-
-                // Crea il pulsante di prenotazione con testo e stile specifico
-                const bookingButton = document.createElement("button");
-                bookingButton.type = "button";
-                bookingButton.textContent = buttonText;
-                bookingButton.classList.add("styled-button");
-
-                // Imposta l'azione del pulsante in base all'indice
-                switch (index) {
-                    case 0:
-                        bookingButton.onclick = () => window.location.href = "checkoutbox.html";
-                        break;
-                    case 1:
-                        bookingButton.onclick = () => window.location.href = "checkoutchef.html";
-                        break;
-                    case 2:
-                        bookingButton.onclick = () => window.location.href = "checkoutaperitivo.html";
-                        break;
-                    case 3:
-                        bookingButton.onclick = () => window.location.href = "checkoutfoodtour.html";
-                        break;
-                }
-
-                // Inserisci il pulsante di prenotazione sotto il contenuto del testo `span`
-                description.insertAdjacentElement("afterend", bookingButton);
-            }
-            // Aggiorna i pallini attivi in base all'indice della card cliccata
-            updateDots(index);
-        });
+        // Imposta il pulsante di prenotazione per reindirizzare alla pagina corretta
+        const bookingButton = card.querySelector(".styled-button");
+        if (bookingButton) {
+            bookingButton.addEventListener("click", (event) => {
+                event.stopPropagation(); // Previene l'espansione della card
+                window.location.href = checkoutPages[index]; // Reindirizza alla pagina di checkout corrispondente
+            });
+        }
     });
+
+    // Evento per il cambio lingua
+    document.getElementById("language-footer").addEventListener("change", (event) => {
+        const selectedLanguage = event.target.value;
+        changeLanguage(selectedLanguage);
+    });
+
+    // Imposta la lingua predefinita
+    changeLanguage(currentLang);
 
     // Scorrimento del carosello per aggiornare i pallini in base alla posizione
     carousel.addEventListener("scroll", () => {
@@ -167,3 +135,5 @@ document.addEventListener("DOMContentLoaded", function() {
         updateDots(newIndex);
     });
 });
+
+
