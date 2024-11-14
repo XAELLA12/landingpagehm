@@ -300,6 +300,10 @@ body {
     display: none;
 }
 
+.card.expanded .img {
+    display: none;
+}
+
 
 /* Anello immagine*/
 .card .img {
@@ -319,8 +323,8 @@ body {
 }
 
 .card h2 {
-    font-weight: 500;
-    font-size: 1.56rem;
+    font-weight: bold;
+    font-size: 1.3rem;
     margin: 30px 0 5px;
     color: rgba(21, 19, 41, 0.848);
 }
