@@ -180,12 +180,12 @@ body {
     -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
     border: 1px solid hwb(0 100% 0%);
     border-radius: 40px;
-    display: flex;
+    display: center;
     cursor: pointer;
     width: 98%;
     padding: 1px; /* Aggiungi padding su tutti i lati */
     align-items: center;
-    justify-content: center;
+   
     flex-direction: column;
     box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.7);
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
@@ -206,9 +206,11 @@ body {
     box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 050);
 }
 
+
 /* Stile pulsanti card */
 .styled-button {
-    width: 100%;
+    display: block;
+    width: 70%;
     padding: 11px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -219,7 +221,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'quicksand', sans-serif;
-    margin-top: 15px; /* Spazio sopra il pulsante */
+    margin: 15px auto 0px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
 }
@@ -255,7 +257,7 @@ body {
 .product-list {
     list-style-type: none;
     padding: 0;
-    margin: 20px 0 0;
+    margin: 20px 10px 0;
     text-align: center;
 }
 
@@ -265,21 +267,6 @@ body {
     margin: 5px 0;
 }
 
-/* Stile per il pulsante Prenota Ora */
-.booking-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    position: relative;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.booking-button img {
-    width: 60%; /* Imposta la larghezza dell'immagine */
-    height: auto;
-}
 
 .booking-button span {
     position: absolute;
