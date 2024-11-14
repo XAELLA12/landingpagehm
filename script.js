@@ -17,15 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const translations = {
         en: {
-            "header.title": "HOME MADE",
-            "header.subtitle": "our hospitality concept",
             "footer.language": "Language:",
             "discover.more": "Discover more",
             "body.text": "At HomeMade, we invite you to enhance your journey in Rome with our selection of culinary experiences, crafted to add a unique flavor to your stay!"
         },
         it: {
-            "header.title": "FATTO IN CASA",
-            "header.subtitle": "il nostro concetto di ospitalità",
             "footer.language": "Lingua:",
             "discover.more": "Scopri di più",
             "body.text": "Da HomeMade, ti invitiamo a migliorare il tuo viaggio a Roma con la nostra selezione di esperienze culinarie, pensate per aggiungere un sapore unico al tuo soggiorno!"

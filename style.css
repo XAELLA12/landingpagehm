@@ -1,3 +1,11 @@
+/* Font HomeMade */
+@font-face {
+    font-family: 'Antique';
+    src: url('font/Antique-Personal-Use.ttf.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;       
+  }  
+
 /* Stile dell'header */
 .header {
     display: flex;
@@ -24,13 +32,14 @@
 }
 
 .header-text h1 {
-    font-size: 25px;
+    font-family: 'Antique', sans-serif;
+    font-size: 45px;
     margin: 0;
-    font-weight: bold;
     color: rgba(21, 19, 41, 0.848);
 }
 
 .header-text p {
+    font-family: 'quicksand', sans-serif;
     font-size: 12px;
     margin: 0;
     color: rgba(21, 19, 41, 0.848);
@@ -88,7 +97,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'quicksand', sans-serif;
     font-weight: 500;
 }
 
@@ -185,6 +194,7 @@ body {
 }
 
 .card span {
+    font-family: 'quicksand', sans-serif;
     display: block; /* Assicura che il sottotitolo occupi tutta la larghezza */
     text-align: center; /* Allinea il testo al centro */
     margin-top: 0px; /* Aggiungi margine se necessario */
@@ -210,7 +220,7 @@ body {
     border-radius: 19px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'quicksand', sans-serif;
     margin-top: 15px; /* Spazio sopra il pulsante */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
