@@ -80,7 +80,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url(img/trysfondo.jpg);
+    background: rgba(0, 0, 0, 0.1);
 
     background-repeat: no-repeat; /* Evita che l’immagine si ripeta */
     background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
