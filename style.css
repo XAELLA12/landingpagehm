@@ -10,7 +10,6 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra il contenuto orizzontalmente */
     padding: 15px 30px;
     position: fixed;
     top: 0;
@@ -21,13 +20,18 @@
 
 /* Stile del logo */
 .logo {
-    height: 45px;
+    height: 35px;
     width: auto;
     margin-right: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Stile del testo nell'header */
 .header-text {
+    position: absolute; /* Permette di centrare il contenitore */
+    left: 50%;
+    transform: translateX(-50%); /* Centra esattamente al centro dell'header */
     text-align: center;
 }
 
@@ -52,12 +56,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Mantiene il logo a sinistra */
-}
-
-.logo-image {
-    max-width: 170px; /* Dimensione massima del logo */
-    height: auto;
-    margin-right: 15px; /* Spazio tra il logo e il titolo */
 }
 
 .site-title {
