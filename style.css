@@ -147,6 +147,27 @@ body {
     scrollbar-width: none;
 }
 
+/* Visualizza tutte le card affiancate su desktop */
+@media screen and (min-width: 900px) {
+    .wrapper .carousel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adatta il numero di card alla larghezza disponibile */
+        gap: 5px; /* Spazio tra le card */
+        overflow-x: visible; /* Rende tutte le card visibili senza bisogno di scorrimento orizzontale */
+    }
+}
+
+/* Nasconde i pallini su desktop */
+@media screen and (min-width: 900px) {
+    .dots {
+        display: none !important;
+    }
+}
+
+
+
+
+
 .carousel::-webkit-scrollbar {
     display: none;
 }
