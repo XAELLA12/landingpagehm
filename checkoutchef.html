@@ -48,7 +48,11 @@
                     <input type="email" id="email" name="email" required placeholder="...">
                 </div>
 
-                
+                <!-- Giorno del servizio -->
+                <div class="form-group">
+                    <label for="allergen" data-i18n="form.allergen">Allergen</label>
+                    <input type="text" id="allergen" name="allergen" placeholder="...">
+                </div>
 
                  <!-- Giorno del servizio -->
                  <div class="form-group">
@@ -66,6 +70,8 @@
                         <option value="4">4 </option>
                         <option value="5">5 </option>
                         <option value="6">6 </option>
+                        <option value="7">7 </option>
+                        <option value="8">8 </option>
                     </select>
                 </div>
 
@@ -125,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
         en: {
             "form.title": "Complete your order",
             "form.service": "Your selected service",
-            "form.service.value": "Our Grocery Delivery",
+            "form.service.value": "Our Roman Private Dinner",
             "form.name": "Name on the reservation",
             "form.email": "Email",
             "form.date": "When?",
@@ -140,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         it: {
             "form.title": "Completa il tuo ordine",
             "form.service": "Servizio scelto",
-            "form.service.value": "Box di Benvenuto",
+            "form.service.value": "La Nostra Cena Romana",
             "form.name": "Nome sulla prenotazione",
             "form.email": "Email",
             "form.date": "Quando?",
@@ -192,22 +198,28 @@ document.addEventListener("DOMContentLoaded", function() {
         let total;
         switch (peopleSelect.value) {
             case "1":
-                total = 50;
-                break;
+                total = 95;
+                break
             case "2":
-                total = 85;
+                total = 190;
                 break;
             case "3":
-                total = 120;
-                break;
+                total = 285;
+                break
             case "4":
-                total = 160;
+                total = 380;
                 break;
             case "5":
-                total = 200;
-                break;
+                total = 475;
+                break
             case "6":
-                total = 250;
+                total = 570;
+                break;
+            case "7":
+                total = 665;
+                break;
+            case "8":
+                total = 760;
                 break;
         }
         totalInput.value = total + " €";

@@ -180,7 +180,7 @@ body {
     -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
     border: 1px solid hwb(0 100% 0%);
     border-radius: 40px;
-    display: center;
+    display: flex;
     cursor: pointer;
     width: 98%;
     padding: 1px; /* Aggiungi padding su tutti i lati */
@@ -454,6 +454,7 @@ color: rgba(21, 19, 41, 0.848);
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group input[type="email"],
+.form-group input[type=allergen],
 .form-group textarea,
 .form-group select {
     width: 100%;
@@ -472,6 +473,7 @@ color: rgba(21, 19, 41, 0.848);
 .form-group input[type="text"]:focus,
 .form-group input[type="date"]:focus,
 .form-group input[type="email"]:focus,
+.form-group input[type=allergen]:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: rgba(21, 19, 41, 0.7);
