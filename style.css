@@ -206,7 +206,6 @@ body {
     width: 98%;
     padding: 1px; /* Aggiungi padding su tutti i lati */
     align-items: center;
-   
     flex-direction: column;
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
 }
@@ -242,7 +241,8 @@ body {
 .carousel .card.expanded {
     width: 98%; /* Occupa tutta la larghezza disponibile */
     height: 520px; /* Altezza aumentata */
-    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 050);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 
