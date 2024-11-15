@@ -278,7 +278,7 @@ body {
 }
 
 .carousel .card.expanded:nth-child(1) span {
-    color: #0501289d; /* Colore sottotitolo per la prima card espansa */
+    color: #050128c8; /* Colore sottotitolo per la prima card espansa */
 }
 
 .carousel .card.expanded:nth-child(2) span {
@@ -290,7 +290,7 @@ body {
 }
 
 .carousel .card.expanded:nth-child(4) span {
-    color: #fcf9f3e7; /* Colore sottotitolo per la quarta card espansa */
+    color: #ff0000e7; /* Colore sottotitolo per la quarta card espansa */
 }
 
 
@@ -469,7 +469,6 @@ body {
     max-width: 90%;
     margin: 0 auto; /* Centra orizzontalmente */
     padding: 35px 0; /* Spazio sopra e sotto il testo */
-    color: rgba(21, 19, 41, 0.848);
 }
 
 /* Nasconde il testo quando la card è espansa */
