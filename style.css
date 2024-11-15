@@ -227,6 +227,40 @@ body {
     background-color: rgba(76, 129, 43, 0.88); 
 }
 
+/* Colore testi delle card */
+.carousel .card:nth-child(1) h2 {
+    color: #050128c8; /* Colore per la prima card */
+}
+
+.carousel .card:nth-child(2) h2 {
+    color: #fcf9f3; /* Colore per la seconda card */
+}
+
+.carousel .card:nth-child(3) h2 {
+    color: #050128c8; /* Colore per la terza card */
+}
+
+.carousel .card:nth-child(4) h2 {
+    color: #fcf9f3; /* Colore per la quarta card */
+}
+
+.carousel .card:nth-child(1) span {
+    color: #0501289d; /* Colore del sottotitolo per la prima card */
+}
+
+.carousel .card:nth-child(2) span {
+    color: #fcf9f3e7; /* Colore del sottotitolo per la seconda card */
+}
+
+.carousel .card:nth-child(3) span {
+    color: #0501289d; /* Colore del sottotitolo per la terza card */
+}
+
+.carousel .card:nth-child(4) span {
+    color: #fcf9f3e7; /* Colore del sottotitolo per la quarta card */
+}
+
+
 
 
 .card span {
