@@ -80,7 +80,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.848);
     background-repeat: no-repeat; /* Evita che l’immagine si ripeta */
     background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
     background-position: center; /* Centra l’immagine */
@@ -212,19 +212,19 @@ body {
 
 
 .carousel .card:nth-child(1) {
-    background-color: rgba(7, 104, 202, 0.325); /* Rosso trasparente */
+    background-color: rgb(239, 234, 216); 
 }
 
 .carousel .card:nth-child(2) {
-    background-color: rgba(12, 120, 61, 0.583); /* Verde trasparente */
+    background-color: rgba(76, 129, 43, 0.88); 
 }
 
 .carousel .card:nth-child(3) {
-    background-color: rgba(207, 128, 24, 0.482);/* Blu trasparente */
+    background-color: rgb(239, 234, 216);
 }
 
 .carousel .card:nth-child(4) {
-    background-color: rgba(117, 55, 117, 0.315); /* Viola trasparente */
+    background-color: rgba(76, 129, 43, 0.88); 
 }
 
 
@@ -302,7 +302,7 @@ body {
 
 .product-list li {
     font-size: 12px;
-    color: #151329a9;
+    color: #fffffff1;
     margin: 5px 0;
 }
 
