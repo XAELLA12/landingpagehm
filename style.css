@@ -260,6 +260,40 @@ body {
     color: #fcf9f3e7; /* Colore del sottotitolo per la quarta card */
 }
 
+/* Colore testi card espanse */
+.carousel .card.expanded:nth-child(1) h2 {
+    color: #050128c8; /* Colore per la prima card espansa */
+}
+
+.carousel .card.expanded:nth-child(2) h2 {
+    color: #fcf9f3; /* Colore per la seconda card espansa */
+}
+
+.carousel .card.expanded:nth-child(3) h2 {
+    color: #050128c8; /* Colore per la terza card espansa */
+}
+
+.carousel .card.expanded:nth-child(4) h2 {
+    color: #fcf9f3; /* Colore per la quarta card espansa */
+}
+
+.carousel .card.expanded:nth-child(1) span {
+    color: #0501289d; /* Colore sottotitolo per la prima card espansa */
+}
+
+.carousel .card.expanded:nth-child(2) span {
+    color: #fcf9f3e7; /* Colore sottotitolo per la seconda card espansa */
+}
+
+.carousel .card.expanded:nth-child(3) span {
+    color: #0501289d; /* Colore sottotitolo per la terza card espansa */
+}
+
+.carousel .card.expanded:nth-child(4) span {
+    color: #fcf9f3e7; /* Colore sottotitolo per la quarta card espansa */
+}
+
+
 
 
 
@@ -336,7 +370,6 @@ body {
 
 .product-list li {
     font-size: 12px;
-    color: #fffffff1;
     margin: 5px 0;
 }
 
@@ -384,11 +417,9 @@ body {
     font-weight: bold;
     font-size: 1.3rem;
     margin: 30px 0 5px;
-    color: rgba(21, 19, 41, 0.848);
 }
 
 .card span {
-    color: #151329a9;
     font-size: 14px;
 
 }
