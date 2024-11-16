@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         en: {
             "footer.language": "Language:",
             "discover.more": "Discover more",
-            "body.text": "At HomeMade, we invite you to enhance your journey in Rome with our selection of culinary experiences, crafted to add a unique flavor to your stay!"
+            "body.text": "Design your holiday in Rome between history and flavors with us!"
         },
         it: {
             "footer.language": "Lingua:",

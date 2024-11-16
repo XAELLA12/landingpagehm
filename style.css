@@ -320,10 +320,22 @@ body {
 
 
 /* Stile pulsanti card */
+
+/* Contenitore del pulsante */
+.container {
+    display: flex; /* Permette di centrare facilmente gli elementi interni */
+    justify-content: center; /* Centra gli elementi orizzontalmente */
+    align-items: center; /* Centra gli elementi verticalmente, se necessario */
+    width: 100%; /* Assicurati che il contenitore occupi tutta la larghezza disponibile */
+}
+
 .styled-button {
-    display: block;
-    width: 70%;
-    padding: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  
+    padding: 11px 20px;
     font-size: 1.1rem;
     font-weight: 600;
     color: #ffffff;
@@ -333,15 +345,23 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'quicksand', sans-serif;
-    margin: 15px auto 0px;
+    margin: 15px auto 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+    white-space: nowrap;
 }
 
 /* Effetto hover */
 .styled-button:hover {
     background-color: rgba(21, 19, 41, 1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombra leggermente più intensa al passaggio del mouse */
+}
+
+/* Stile per l'icona nel pulsante */
+.button-icon {
+    width: 20px; /* Regola la dimensione dell'icona */
+    height: 20px;
+    fill: white;
 }
 
 
