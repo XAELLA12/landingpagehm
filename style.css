@@ -436,7 +436,7 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .wrapper .carousel {
         grid-auto-columns: 100%;
 
@@ -621,7 +621,7 @@ button[type="submit"]:hover {
 }
 
 /* Stile responsivo per dispositivi mobili */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .checkout-form {
         padding: 20px;
         margin: 10px auto 20px;
