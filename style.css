@@ -627,6 +627,14 @@ button[type="submit"]:hover {
     }
 }
 
+/* Stile del messaggio di conferma */
+#confirmation-message {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(21, 19, 41, 0.848);
+}
+
 
 
 /* Stile per il pulsante Indietro */
