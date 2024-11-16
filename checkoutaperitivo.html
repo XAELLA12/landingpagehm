@@ -248,19 +248,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 form.style.display = "none";
                 title.style.display = "none";
                 confirmationMessage.style.display = "block";
-                // Scorri in cima alla pagina e resetta lo zoom
-window.scrollTo(0, 0);
-document.body.style.transform = "scale(1)";
-document.body.style.transformOrigin = "0 0";
-}, (err) => {
-            button.textContent = 'Request your service!';
-            alert("Error: " + JSON.stringify(err));
-        })
-        .finally(() => {
+                
+            })
+            .catch(err => {
+                button.textContent = 'Request your service!';
+                alert("Error: " + JSON.stringify(err));
+            })
+            .finally(() => {
                 // Nasconde lo spinner
                 loadingSpinner.style.display = "none";
             });
-});
+    });
 
     // Funzione per il pulsante "Back" che torna alla pagina precedente
     backButton.addEventListener("click", function() {
