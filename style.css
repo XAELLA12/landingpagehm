@@ -624,7 +624,7 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
     .checkout-form {
         padding: 20px;
-        margin: 10px auto 200px;
+        margin: 10px auto 20px;
     }
 
     .checkout-form h2 {
