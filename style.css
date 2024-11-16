@@ -686,6 +686,15 @@ button#back-button:hover {
     border-top: 4px solid rgba(21, 19, 41, 0.8); /* Colore della parte superiore */
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    position: relative; /* Per sovrapporre l'immagine del logo */
+}
+
+/* Aggiungi l'immagine del logo */
+.loading-spinner img {
+    position: absolute;
+    width: 30px; /* Dimensione del logo */
+    height: auto;
+    animation: fadeIn 1s ease-in-out; /* Leggero effetto fade */
 }
 
 /* Animazione */
@@ -695,5 +704,14 @@ button#back-button:hover {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
