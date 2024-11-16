@@ -629,10 +629,11 @@ button[type="submit"]:hover {
 
 /* Stile del messaggio di conferma */
 #confirmation-message {
-    margin: 0 auto;
-    font-size: 1.5rem;
+    margin: 20px auto;
+    font-size: 1.2rem;
     font-weight: 600;
     color: rgba(21, 19, 41, 0.848);
+    text-align: center; /* Assicura l'allineamento al centro */
 }
 
 
