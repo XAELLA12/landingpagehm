@@ -252,16 +252,15 @@ document.addEventListener("DOMContentLoaded", function() {
 window.scrollTo(0, 0);
 document.body.style.transform = "scale(1)";
 document.body.style.transformOrigin = "0 0";
-            })
-            .catch(err => {
-                button.textContent = 'Request your service!';
-                alert("Error: " + JSON.stringify(err));
-            })
-            .finally(() => {
+}, (err) => {
+            button.textContent = 'Request your service!';
+            alert("Error: " + JSON.stringify(err));
+        })
+        .finally(() => {
                 // Nasconde lo spinner
                 loadingSpinner.style.display = "none";
             });
-    });
+});
 
     // Funzione per il pulsante "Back" che torna alla pagina precedente
     backButton.addEventListener("click", function() {
