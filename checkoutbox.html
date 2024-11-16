@@ -244,9 +244,11 @@ document.addEventListener("DOMContentLoaded", function() {
             title.style.display = "none";
             confirmationMessage.style.display = "block";
 
-            // Scorri in cima alla pagina
-            window.scrollTo(0, 0);
-            
+           // Scorri in cima alla pagina e resetta lo zoom
+window.scrollTo(0, 0);
+document.body.style.transform = "scale(1)";
+document.body.style.transformOrigin = "0 0";
+
         }, (err) => {
             button.textContent = 'Request your service!';
             alert("Error: " + JSON.stringify(err));
