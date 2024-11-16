@@ -521,7 +521,7 @@ color: rgba(21, 19, 41, 0.848);
 
 /* Stile della sezione di checkout */
 .checkout-form {
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
     margin: 40px auto 60px; /* Spaziatura per evitare che l'header copra il contenuto */
     padding: 30px;
@@ -624,7 +624,7 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
     .checkout-form {
         padding: 20px;
-        margin: 10px auto 20px;
+        margin: 10px auto 200px;
     }
 
     .checkout-form h2 {
