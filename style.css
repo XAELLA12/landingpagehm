@@ -75,6 +75,11 @@
     align-items: center;
 }
 
+/* Aggiungi un padding al contenitore principale per compensare l'header */
+main {
+    padding-top: 80px; /* Compensa l'altezza dell'header */
+}
+
 
 /* Sfondo dell'intera pagina */
 body {
@@ -518,7 +523,7 @@ color: rgba(21, 19, 41, 0.848);
 .checkout-form {
     max-width: 700px;
     width: 100%;
-    margin: 120px auto 60px; /* Spaziatura per evitare che l'header copra il contenuto */
+    margin: 40px auto 60px; /* Spaziatura per evitare che l'header copra il contenuto */
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.15); /* Sfondo trasparente */
     backdrop-filter: blur(10px); /* Effetto sfocatura */
@@ -532,7 +537,7 @@ color: rgba(21, 19, 41, 0.848);
     font-size: 1.8rem;
     color: rgba(21, 19, 41, 0.848);
     font-family: 'Roboto Condensed', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 600;
 }
 
@@ -619,7 +624,7 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
     .checkout-form {
         padding: 20px;
-        margin: 177px auto 20px;
+        margin: 10px auto 20px;
     }
 
     .checkout-form h2 {
