@@ -116,7 +116,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Posiziona lo scroll in cima alla pagina
     window.scrollTo(0, 0);
-    
+
     const peopleSelect = document.getElementById("people");
     const totalInput = document.getElementById("total");
     const confirmationMessage = document.getElementById("confirmation-message");
@@ -243,6 +243,10 @@ document.addEventListener("DOMContentLoaded", function() {
             form.style.display = "none";
             title.style.display = "none";
             confirmationMessage.style.display = "block";
+
+            // Scorri in cima alla pagina
+            window.scrollTo(0, 0);
+            
         }, (err) => {
             button.textContent = 'Request your service!';
             alert("Error: " + JSON.stringify(err));
