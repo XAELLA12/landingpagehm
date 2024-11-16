@@ -30,7 +30,7 @@
         <!-- Spinner per il caricamento -->
         <div id="loading-spinner" class="loading-spinner" style="display: none;"></div>
 
-        
+
         <section class="checkout-form">
             <h2 data-i18n="form.title">Complete your order</h2>
             
@@ -53,11 +53,6 @@
                     <input type="email" id="email" name="email" required placeholder="...">
                 </div>
 
-                <!-- Giorno del servizio -->
-                <div class="form-group">
-                    <label for="allergen" data-i18n="form.allergen">Allergen</label>
-                    <input type="text" id="allergen" name="allergen" placeholder="...">
-                </div>
 
                  <!-- Giorno del servizio -->
                  <div class="form-group">
@@ -127,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const backButton = document.getElementById("back-button");
     const dateInput = document.getElementById("date");
     const title = document.querySelector(".checkout-form h2");
+    const loadingSpinner = document.getElementById("loading-spinner"); // Spinner
 
     // Definisce la lingua corrente, con l'inglese come predefinito
     let currentLang = localStorage.getItem('preferredLanguage') || 'en'; // Usa la lingua salvata o imposta l'inglese come predefinito
@@ -230,6 +226,9 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
+        // Mostra lo spinner
+        loadingSpinner.style.display = "flex";
+
         button.value = 'Sending...';
 
         const serviceID = 'service_qo4q1yw';
@@ -244,7 +243,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }, (err) => {
             button.textContent = 'Request your service!';
             alert("Error: " + JSON.stringify(err));
-        });
+        })
+        .finally(() => {
+                // Nasconde lo spinner
+                loadingSpinner.style.display = "none";
+            });
 });
     // Funzione per il pulsante "Back" che torna alla pagina precedente
     backButton.addEventListener("click", function() {

@@ -125,10 +125,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById("button");
     const backButton = document.getElementById("back-button");
     const dateInput = document.getElementById("date");
+    const allergenInput = document.getElementById("allergen"); // Campo Allergeni
     const title = document.querySelector(".checkout-form h2");
+    const loadingSpinner = document.getElementById("loading-spinner"); // Spinner
 
     // Definisce la lingua corrente, con l'inglese come predefinito
-    let currentLang = localStorage.getItem('preferredLanguage') || 'en'; // Usa la lingua salvata o imposta l'inglese come predefinito
+    let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
     const translations = {
         en: {
@@ -138,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "form.name": "Name on the reservation",
             "form.email": "Email",
             "form.date": "When?",
-            "form.allergen":  "Allergen",
+            "form.allergen": "Allergen",
             "form.people": "How many?",
             "form.total": "Total",
             "form.submit": "Request your service!",
@@ -153,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "form.name": "Nome sulla prenotazione",
             "form.email": "Email",
             "form.date": "Quando?",
-            "form.allergen":  "Allergeni",
+            "form.allergen": "Allergeni",
             "form.people": "Quante persone?",
             "form.total": "Totale",
             "form.submit": "Richiedi il tuo servizio!",
@@ -163,33 +165,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Funzione per cambiare lingua e salvare la scelta in localStorage
     function changeLanguage(lang) {
         currentLang = lang;
-        localStorage.setItem('preferredLanguage', lang); // Salva la lingua in localStorage
+        localStorage.setItem('preferredLanguage', lang);
         document.querySelectorAll("[data-i18n]").forEach(element => {
             const key = element.getAttribute("data-i18n");
-
-            // Controlla se l'elemento è un input
-        if (element.tagName === "INPUT" && element.type === "text") {
-            element.value = translations[lang][key] || element.value; // Aggiorna il valore
-        } else {
-            element.textContent = translations[lang][key] || element.textContent; // Aggiorna il testo
-        }
+            if (element.tagName === "INPUT" && element.type === "text") {
+                element.value = translations[lang][key] || element.value;
+            } else {
+                element.textContent = translations[lang][key] || element.textContent;
+            }
         });
     }
 
-    // Imposta la lingua iniziale basata su localStorage
     changeLanguage(currentLang);
     document.getElementById("language-footer").value = currentLang;
 
-    // Evento per il cambio lingua e salva la preferenza
     document.getElementById("language-footer").addEventListener("change", (event) => {
         const selectedLanguage = event.target.value;
         changeLanguage(selectedLanguage);
     });
 
-    // Imposta la data minima del calendario al giorno successivo
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
@@ -202,19 +198,19 @@ document.addEventListener("DOMContentLoaded", function() {
         switch (peopleSelect.value) {
             case "1":
                 total = 65;
-                break
+                break;
             case "2":
                 total = 130;
                 break;
             case "3":
                 total = 200;
-                break
+                break;
             case "4":
                 total = 265;
                 break;
             case "5":
                 total = 330;
-                break
+                break;
             case "6":
                 total = 395;
                 break;
@@ -223,11 +219,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     peopleSelect.addEventListener("change", updateTotal);
-    updateTotal(); // Calcola il totale iniziale
- 
-    // Funzione per inviare l'email
+    updateTotal();
+
+    // Funzione per inviare il modulo
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+
+        // Validazione del campo "allergeni"
+        if (!allergenInput.value.trim()) {
+            alert("The 'Allergens' field is mandatory. Please enter 'none' if you have no allergies.");
+            allergenInput.focus();
+            return;
+        }
+
+        // Mostra lo spinner
+        loadingSpinner.style.display = "flex";
 
         button.value = 'Sending...';
 
@@ -235,16 +241,22 @@ document.addEventListener("DOMContentLoaded", function() {
         const templateID = 'template_ney6ib9';
 
         emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-            button.textContent = 'Request your service!';
-            form.style.display = "none";
-            title.style.display = "none";
-            confirmationMessage.style.display = "block";
-        }, (err) => {
-            button.textContent = 'Request your service!';
-            alert("Error: " + JSON.stringify(err));
-        });
-});
+            .then(() => {
+                button.textContent = 'Request your service!';
+                form.style.display = "none";
+                title.style.display = "none";
+                confirmationMessage.style.display = "block";
+            })
+            .catch(err => {
+                button.textContent = 'Request your service!';
+                alert("Error: " + JSON.stringify(err));
+            })
+            .finally(() => {
+                // Nasconde lo spinner
+                loadingSpinner.style.display = "none";
+            });
+    });
+
     // Funzione per il pulsante "Back" che torna alla pagina precedente
     backButton.addEventListener("click", function() {
         window.history.back();
