@@ -619,7 +619,7 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
     .checkout-form {
         padding: 20px;
-        margin: 100px auto 20px;
+        margin: 177px auto 20px;
     }
 
     .checkout-form h2 {
@@ -629,9 +629,9 @@ button[type="submit"]:hover {
 
 /* Stile del messaggio di conferma */
 #confirmation-message {
-    margin: 20px auto;
-    font-size: 1.2rem;
-    font-weight: 600;
+    margin: 15px auto;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: rgba(21, 19, 41, 0.848);
     text-align: center; /* Assicura l'allineamento al centro */
 }
