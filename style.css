@@ -217,19 +217,19 @@ body {
 
 
 .carousel .card:nth-child(1) {
-    background-color: rgb(239, 234, 216); 
+    background-color: rgba(232, 77, 77, 0.277); 
 }
 
 .carousel .card:nth-child(2) {
-    background-color: rgba(76, 129, 43, 0.88); 
+    background-color: rgba(211, 211, 216, 1); 
 }
 
 .carousel .card:nth-child(3) {
-    background-color: rgb(239, 234, 216);
+    background-color: rgba(176, 108, 141, 0.5);
 }
 
 .carousel .card:nth-child(4) {
-    background-color: rgba(76, 129, 43, 0.88); 
+    background-color: rgba(108, 162, 216, 0.637); 
 }
 
 /* Colore testi delle card */
@@ -238,7 +238,7 @@ body {
 }
 
 .carousel .card:nth-child(2) h2 {
-    color: #fcf9f3; /* Colore per la seconda card */
+    color:  #050128c8; /* Colore per la seconda card */
 }
 
 .carousel .card:nth-child(3) h2 {
@@ -246,7 +246,7 @@ body {
 }
 
 .carousel .card:nth-child(4) h2 {
-    color: #fcf9f3; /* Colore per la quarta card */
+    color:  #050128c8 /* Colore per la quarta card */
 }
 
 .carousel .card:nth-child(1) span {
@@ -254,7 +254,7 @@ body {
 }
 
 .carousel .card:nth-child(2) span {
-    color: #fcf9f3e7; /* Colore del sottotitolo per la seconda card */
+    color: #0501289d; /* Colore del sottotitolo per la seconda card */
 }
 
 .carousel .card:nth-child(3) span {
@@ -262,7 +262,7 @@ body {
 }
 
 .carousel .card:nth-child(4) span {
-    color: #fcf9f3e7; /* Colore del sottotitolo per la quarta card */
+    color:  #0501289d; /* Colore del sottotitolo per la quarta card */
 }
 
 /* Colore testi card espanse */
@@ -271,7 +271,7 @@ body {
 }
 
 .carousel .card.expanded:nth-child(2) h2 {
-    color: #fcf9f3; /* Colore per la seconda card espansa */
+    color: #050128c8; /* Colore per la seconda card espansa */
 }
 
 .carousel .card.expanded:nth-child(3) h2 {
@@ -279,15 +279,15 @@ body {
 }
 
 .carousel .card.expanded:nth-child(4) h2 {
-    color: #fcf9f3; /* Colore per la quarta card espansa */
+    color: #050128c8; /* Colore per la quarta card espansa */
 }
 
 .carousel .card.expanded:nth-child(1) span {
-    color: #050128c8; /* Colore sottotitolo per la prima card espansa */
+    color: #0501289d; /* Colore sottotitolo per la prima card espansa */
 }
 
 .carousel .card.expanded:nth-child(2) span {
-    color: #fcf9f3e7; /* Colore sottotitolo per la seconda card espansa */
+    color: #0501289d; /* Colore sottotitolo per la seconda card espansa */
 }
 
 .carousel .card.expanded:nth-child(3) span {
@@ -295,7 +295,7 @@ body {
 }
 
 .carousel .card.expanded:nth-child(4) span {
-    color: #ff0000e7; /* Colore sottotitolo per la quarta card espansa */
+    color: #0501289d; /* Colore sottotitolo per la quarta card espansa */
 }
 
 
