@@ -219,6 +219,9 @@ body {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
     justify-content: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    
 }
 
 
@@ -336,7 +339,7 @@ body {
 }
 
 .styled-button {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -355,6 +358,8 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
     white-space: nowrap;
+    max-width: 90%;
+    width: auto; /* Adatta la larghezza al contenuto */
 }
 
 /* Effetto hover */
