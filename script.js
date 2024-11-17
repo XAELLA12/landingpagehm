@@ -3,6 +3,40 @@ document.addEventListener("DOMContentLoaded", function() {
     const dotsContainer = document.querySelector(".dots");
     const cards = document.querySelectorAll(".carousel .card");
     const bodyText = document.querySelector(".body-text");
+    const header = document.querySelector(".header");
+
+   // Funzione per verificare se una card è espansa
+   function isAnyCardExpanded() {
+    return Array.from(cards).some(card => card.classList.contains("expanded"));
+}
+
+// Funzione per chiudere tutte le card espanse
+function closeAllExpandedCards() {
+    cards.forEach(card => {
+        card.classList.remove("expanded");
+        const expandedContent = card.querySelector(".expanded-content");
+        const descriptionText = card.querySelector("span[data-i18n]");
+        if (expandedContent) expandedContent.classList.add("hidden");
+        if (descriptionText) descriptionText.style.display = ''; // Mostra la descrizione principale
+    });
+    toggleBodyText(true); // Mostra il testo del corpo principale
+}
+
+// Evento sul clic dell'header
+header.addEventListener("click", () => {
+    if (isAnyCardExpanded()) {
+        // Se c'è una card espansa, chiudi tutte le card
+        closeAllExpandedCards();
+    } else {
+        // Se non ci sono card espanse, torna all'index.html
+        window.location.href = "index.html";
+    }
+});
+
+// Funzione per mostrare o nascondere il body text
+function toggleBodyText(visible) {
+    bodyText.style.display = visible ? "block" : "none";
+}
 
     // Imposta la lingua corrente, con l'inglese come predefinita o leggendola da localStorage
     let currentLang = localStorage.getItem('preferredLanguage') || 'en';
