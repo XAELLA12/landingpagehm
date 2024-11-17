@@ -267,7 +267,7 @@ body {
 }
 
 .carousel .card:nth-child(3) span {
-    color: #ffffff; /* Colore del sottotitolo per la terza card */
+    color: #edf0fc; /* Colore del sottotitolo per la terza card */
 }
 
 .carousel .card:nth-child(4) span {
