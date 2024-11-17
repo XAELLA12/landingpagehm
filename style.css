@@ -230,7 +230,7 @@ body {
 }
 
 .carousel .card:nth-child(2) {
-    background-color: rgb(197, 218, 224); 
+    background-color: rgba(194, 205, 226, 0.895); 
 }
 
 .carousel .card:nth-child(3) {
