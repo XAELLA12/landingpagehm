@@ -19,12 +19,58 @@ document.addEventListener("DOMContentLoaded", function() {
         en: {
             "footer.language": "Language:",
             "discover.more": "Discover more",
-            "body.text": "Design your holiday in Rome between history and flavors with us!"
+            "body.text": "Design your holiday in Rome between history and flavors with us!",
+            "card1.title": "Our Grocery Delivery",
+            "card2.title": "Our Roman Private Dinner",
+            "card3.title": "Our Aperitif",
+            "card4.title": "Food and Historical Walk",
+            "card1.description": "Enjoy your holiday with our delicious Roman delicacies!",
+            "card2.description": "Your authentically Italian evening with us!",
+            "card3.description": "Choose our aperitif designed specifically to let you savor our most authentic products with mind-boggling cocktails!",
+            "card4.description": "Get ready to tour the city with the best food Rome has to offer!",
+           "card1.products-list": [
+            "Choose our Box with the best local products to receive directly upon your arrival! Or text us a shopping list you wish, we'll take care of everything!",
+            "Bottle of wine from our Region",
+            "Tarallucci",
+            "Pecorino Cheese",
+            "Green Aperitif Olives",
+            "Selection of hams",
+            "Selection of salamis",
+            "Buffalo Mozzarella",
+            "White pizza",
+            "Wine donuts",
+            "Starting form 50€"
+        ],
+                        
+
+
         },
         it: {
             "footer.language": "Lingua:",
             "discover.more": "Scopri di più",
-            "body.text": "Da HomeMade, ti invitiamo a migliorare il tuo viaggio a Roma con la nostra selezione di esperienze culinarie, pensate per aggiungere un sapore unico al tuo soggiorno!"
+            "body.text": "Progetta con noi la tua vacanza a Roma, tra storia e sapori indimenticabili!",
+            "card1.title": "Box di Benvenuto",
+            "card2.title": "Chef a Domicilio",
+            "card3.title": "Il Nostro Aperitivo",
+            "card4.title": "Food Tour",
+             "card1.description": "Goditi la tua vacanza con le nostre deliziose specialità romane!",
+             "card2.description": "La tua autentica serata romana con noi!",
+             "card3.description": "scegli il nostro aperitivo, pensato per farti assaporare i nostri prodotti tipici e i nostri cocktails !",
+             "card4.description": "Preparati a scoprire la città con il miglior cibo che Roma ha da offrire!",
+             "card1.products-list": [
+                "Scegli la nostra Box con i migliori prodotti locali da ricevere direttamente al tuo arrivo! Oppure inviaci una lista della spesa che desideri, ci occuperemo di tutto noi!",
+                "Bottiglia di vino della nostra regione",
+                "Tarallucci",
+                "Formaggio Pecorino",
+                "Olive verdi",
+                "Selezione di prosciutti",
+                "Selezioni di salami",
+                "Mozzarella di Bufala",
+                "WPizza bianca",
+                "Ciambelline al vino",
+                "A partire da 50€"
+            ],
+
         }
     };
 
