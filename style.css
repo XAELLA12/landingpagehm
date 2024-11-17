@@ -259,19 +259,19 @@ body {
 }
 
 .carousel .card:nth-child(1) span {
-    color: #edf0fc; /* Colore del sottotitolo per la prima card */
+    color: #0501289d; /* Colore del sottotitolo per la prima card */
 }
 
 .carousel .card:nth-child(2) span {
-    color: #edf0fc; /* Colore del sottotitolo per la seconda card */
+    color: #0501289d; /* Colore del sottotitolo per la seconda card */
 }
 
 .carousel .card:nth-child(3) span {
-    color: #edf0fc; /* Colore del sottotitolo per la terza card */
+    color: #0501289d; /* Colore del sottotitolo per la terza card */
 }
 
 .carousel .card:nth-child(4) span {
-    color:  #edf0fc; /* Colore del sottotitolo per la quarta card */
+    color:  #0501289d; /* Colore del sottotitolo per la quarta card */
 }
 
 /* Colore testi card espanse */
