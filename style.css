@@ -234,11 +234,11 @@ body {
 }
 
 .carousel .card:nth-child(3) {
-    background-color: rgba(168, 164, 210, 0.947);
+    background-color: rgba(168, 164, 210, 0.913);
 }
 
 .carousel .card:nth-child(4) {
-    background-color: rgba(140, 198, 225, 0.927); 
+    background-color: rgba(137, 193, 219, 0.906); 
 }
 
 /* Colore testi delle card */
