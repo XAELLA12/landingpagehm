@@ -259,11 +259,11 @@ body {
 }
 
 .carousel .card:nth-child(1) span {
-    color: #0501289d; /* Colore del sottotitolo per la prima card */
+    color: #edf0fc; /* Colore del sottotitolo per la prima card */
 }
 
 .carousel .card:nth-child(2) span {
-    color: #0501289d; /* Colore del sottotitolo per la seconda card */
+    color: #edf0fc; /* Colore del sottotitolo per la seconda card */
 }
 
 .carousel .card:nth-child(3) span {
@@ -271,7 +271,7 @@ body {
 }
 
 .carousel .card:nth-child(4) span {
-    color:  #0501289d; /* Colore del sottotitolo per la quarta card */
+    color:  #edf0fc; /* Colore del sottotitolo per la quarta card */
 }
 
 /* Colore testi card espanse */
