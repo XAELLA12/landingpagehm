@@ -204,7 +204,7 @@ body {
     background-color: #47762980; /* Sfondo bianco trasparente */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
-    border: 0.3px solid hwb(0 100% 0%);
+    border: 0.9px solid hwb(0 100% 0%);
     border-radius: 40px;
     display: flex;
     cursor: pointer;
@@ -217,19 +217,19 @@ body {
 
 
 .carousel .card:nth-child(1) {
-    background-color: rgba(232, 77, 77, 0.277); 
+    background-color: rgba(250, 188, 184, 0.955); 
 }
 
 .carousel .card:nth-child(2) {
-    background-color: rgba(211, 211, 216, 1); 
+    background-color: rgb(204, 213, 219); 
 }
 
 .carousel .card:nth-child(3) {
-    background-color: rgba(176, 108, 141, 0.5);
+    background-color: rgba(168, 164, 210, 0.947);
 }
 
 .carousel .card:nth-child(4) {
-    background-color: rgba(108, 162, 216, 0.637); 
+    background-color: rgba(140, 198, 225, 0.973); 
 }
 
 /* Colore testi delle card */
