@@ -376,7 +376,6 @@ body {
 }
 
 
-
 /* Stile per il testo "Scopri di più" */
 .discover-more {
     display: block; /* Mostra il testo di default */
@@ -478,6 +477,13 @@ body {
 
     }
 }
+
+@media screen and (min-width: 900px) {
+    .wrapper {
+        padding-top: 100px; /* Aumenta la distanza dall'header solo su desktop */
+    }
+}
+
 
 /* pallini slider */
 .dots {
