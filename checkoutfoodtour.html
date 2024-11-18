@@ -33,6 +33,7 @@
 </div>
 
 <section class="checkout-form" style="background-color: rgba(137, 193, 219, 0.906)";>
+    <button type="button" id="home-button" class="round-button" data-i18n="form.home">⬅</button>
             <h2 data-i18n="form.title">Complete your order</h2>
             
             <form id="form">
@@ -82,7 +83,7 @@
                 </div>
 
                 <!-- Pulsante di invio -->
-                <button type="submit" id="button" data-i18n="form.submit">Request your Tour!</button>
+                <button type="submit" id="button" data-i18n="form.submit">Request your Walk!</button>
             
             </form>
             
@@ -91,9 +92,7 @@
                 Your reservation has been successfully submitted! You will receive an email shortly to confirm your booking.
             </p>
         </section>
-         <!-- Pulsante Indietro fuori dal checkout-form -->
-    <button type="button" id="back-button" data-i18n="form.back">Back</button>
-</main>
+    
     </main>
 
     <!-- Footer -->
@@ -139,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "form.allergen":  "Allergen",
             "form.people": "How many?",
             "form.total": "Total",
-            "form.submit": "Request your Tour!",
+            "form.submit": "Request your Walk!",
             "form.confirmation": "Your reservation has been successfully submitted! You will be contacted shortly via email to confirm your order.",
             "form.back": "Back",
             "footer.language": "Language:"
@@ -255,10 +254,10 @@ document.body.style.transformOrigin = "0 0";
                 loadingSpinner.style.display = "none";
             });
 });
-    // Funzione per il pulsante "Back" che torna alla pagina precedente
-    backButton.addEventListener("click", function() {
-        window.history.back();
-    });
+document.getElementById("home-button").addEventListener("click", function() {
+    window.location.href = "index.html"; // Sostituisci con l'URL della tua home
+});
+  
 });
 
     </script>

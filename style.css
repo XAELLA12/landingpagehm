@@ -59,6 +59,7 @@
 /* Aggiungi un padding al contenitore principale per compensare l'header FORSE INUTILE*/
 main {
     padding-top: 80px; /* Compensa l'altezza dell'header */
+    padding-bottom: 30px; /* Altezza del footer */
 }
 
 
@@ -634,28 +635,29 @@ button[type="submit"]:hover {
 
 
 
-/* Stile per il pulsante Indietro */
-button#back-button {
-    display: block; /* Assicura che occupi una nuova riga */
-    margin: 30px auto 20px; /* Centro orizzontale con margine superiore */
-    padding: 8px; /* Riduci l'altezza */
-    margin-bottom: 50px;
-    font-size: 0.9rem; /* Riduci la dimensione del testo */
-    font-weight: 500;
-    color: #ffffff;
-    background-color: #e41515a7; /* Colore diverso per differenziarlo */
+.round-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:  #e65252d4; /* Colore di sfondo */
+    color: #fceee9; /* Colore del testo */
     border: none;
-    border-radius: 15px; /* Arrotonda i bordi */
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto Condensed', sans-serif;
-    width: 50%; /* Larghezza ridotta */
-    
+    margin-right: 10px;
+    position: absolute; /* Posizionamento relativo alla card */
+    top: 24px; /* Distanza dall'alto della card */
+    left: 20px; /* Distanza dal lato sinistro della card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Effetto hover sul pulsante Indietro */
-button#back-button:hover {
-    background-color: #333333;
+.round-button:hover {
+    transform: scale(1.1); /* Effetto ingrandimento */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 

@@ -33,6 +33,7 @@
 </div>
 
 <section class="checkout-form" style="background-color: rgba(168, 164, 210, 0.913)";>
+    <button type="button" id="home-button" class="round-button" data-i18n="form.home">⬅</button>
             <h2 data-i18n="form.title">Complete your order</h2>
             
             <form id="form">
@@ -96,9 +97,7 @@
                 Your reservation has been successfully submitted! You will receive an email shortly to confirm your booking.
             </p>
         </section>
-         <!-- Pulsante Indietro fuori dal checkout-form -->
-    <button type="button" id="back-button" data-i18n="form.back">Back</button>
-</main>
+        
     </main>
 
     <!-- Footer -->
@@ -264,10 +263,9 @@ document.body.style.transformOrigin = "0 0";
             });
 });
 
-    // Funzione per il pulsante "Back" che torna alla pagina precedente
-    backButton.addEventListener("click", function() {
-        window.history.back();
-    });
+document.getElementById("home-button").addEventListener("click", function() {
+    window.location.href = "index.html"; // Sostituisci con l'URL della tua home
+});
 });
 
     </script>
