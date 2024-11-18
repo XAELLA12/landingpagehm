@@ -22,6 +22,16 @@ function closeAllExpandedCards() {
     toggleBodyText(true); // Mostra il testo del corpo principale
 }
 
+// Evento per chiudere la card quando si clicca fuori
+document.addEventListener("click", (event) => {
+    // Verifica se il clic è avvenuto all'interno di una card
+    const clickedInsideCard = Array.from(cards).some(card => card.contains(event.target));
+    
+    if (!clickedInsideCard && isAnyCardExpanded()) {
+        closeAllExpandedCards();
+    }
+});
+
 // Evento sul clic dell'header
 header.addEventListener("click", () => {
     if (isAnyCardExpanded()) {
