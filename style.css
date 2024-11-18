@@ -638,9 +638,10 @@ button[type="submit"]:hover {
 .round-button .arrow-icon {
     width: 20px; /* Dimensione fissa dell'icona */
     height: 20px;
-    color: #fceee9; /* Colore dell'icona */
     margin: 0 auto; /* Centra l'icona all'interno del pulsante */
     display: block;
+    pointer-events: none; /* Assicura che il clic venga catturato dal pulsante e non dall'immagine */
+
 }
 
 .round-button {
