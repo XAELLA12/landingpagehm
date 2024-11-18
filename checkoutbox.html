@@ -130,6 +130,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const dateInput = document.getElementById("date");
     const title = document.querySelector(".checkout-form h2");
     const loadingSpinner = document.getElementById("loading-spinner"); // Spinner
+    const header = document.querySelector(".header"); // Header element
+
+    // Evento per tornare indietro cliccando sull'header
+    header.addEventListener("click", function() {
+        window.history.back();
+    });
 
     // Definisce la lingua corrente, con l'inglese come predefinito
     let currentLang = localStorage.getItem('preferredLanguage') || 'en'; // Usa la lingua salvata o imposta l'inglese come predefinito
