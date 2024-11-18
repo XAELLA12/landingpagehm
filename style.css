@@ -635,23 +635,29 @@ button[type="submit"]:hover {
 
 
 
+.round-button .arrow-icon {
+    width: 20px; /* Dimensione fissa dell'icona */
+    height: 20px;
+    color: #fceee9; /* Colore dell'icona */
+    margin: 0 auto; /* Centra l'icona all'interno del pulsante */
+    display: block;
+}
+
 .round-button {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Dimensione fissa del pulsante */
+    height: 50px;
     border-radius: 50%;
-    background-color:  #e65252d4; /* Colore di sfondo */
-    color: #fceee9; /* Colore del testo */
+    background-color: #e65252d4; /* Colore di sfondo */
+    color: #fceee9; /* Colore del testo/icone */
     border: none;
-    font-size: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-right: 10px;
-    position: absolute; /* Posizionamento relativo alla card */
-    top: 24px; /* Distanza dall'alto della card */
-    left: 20px; /* Distanza dal lato sinistro della card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
+    position: absolute; /* Posizione relativa alla card */
+    top: 24px;
+    left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -659,6 +665,7 @@ button[type="submit"]:hover {
     transform: scale(1.1); /* Effetto ingrandimento */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 
