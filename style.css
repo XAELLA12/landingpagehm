@@ -25,7 +25,13 @@
     margin-right: 10px;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mantiene il logo a sinistra */
 }
+
+
+
 
 /* Stile del testo nell'header */
 .header-text {
@@ -50,32 +56,7 @@
 }
 
 
-
-
-.logo-title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Mantiene il logo a sinistra */
-}
-
-.site-title {
-    font-size: 1.8rem; /* Regola la dimensione del titolo per renderlo ben visibile */
-    color: #2c3e50;
-    margin: 0 auto; /* Utilizza margini automatici per centrare il titolo */
-    text-align: center; /* Allinea il testo del titolo al centro */
-    flex: 1; /* Fa sì che il titolo occupi lo spazio disponibile per centrarlo */
-      font-family: 'Poppins', sans-serif; /* Cambia font in Poppins */
-    font-weight: 400; /* Imposta il peso Regular 400 per il titolo */
-}
-
-.home-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-}
-
-/* Aggiungi un padding al contenitore principale per compensare l'header */
+/* Aggiungi un padding al contenitore principale per compensare l'header FORSE INUTILE*/
 main {
     padding-top: 80px; /* Compensa l'altezza dell'header */
 }
@@ -84,7 +65,6 @@ main {
 /* Sfondo dell'intera pagina */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background: rgba(250, 246, 242, 0.99);
     background-repeat: no-repeat; /* Evita che l’immagine si ripeta */
     background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
@@ -112,36 +92,13 @@ body {
     padding-top: 80px; /* Stessa altezza dell'header */
     padding-bottom: 0px;
     max-width: 1100px;
-    width: 90%;
+    width: 100%;
     position: relative;
     border-radius: 35px; /* Imposta l'arrotondamento del bordo */
     overflow: hidden; /* Nasconde eventuali elementi che escono dal bordo */
 
 }
 
-/* pulsanti laterali di navigazione */
-.wrapper i {
-    display: none;
-    height: 50px;
-    width: 50px;
-    background: rgb(243, 229, 247);
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    font-size: 1.25 rem;
-    transform: translateY(-50%);
-}
-
-.wrapper i:first-child {
-    left: -32px;
-}
-
-.wrapper i:last-child {
-    right: -32px;
-}
 
 /* Carosello */
 .wrapper .carousel {
@@ -174,14 +131,11 @@ body {
 }
 
 
-
-
-
 .carousel::-webkit-scrollbar {
     display: none;
 }
 
-.carousel :where(.card, .img) {
+.carousel :where(.card, .img) { /* allinea elementi detro il carosello */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,7 +150,7 @@ body {
     scroll-behavior: auto;
 }
 
-.carousel.dragging .card {
+.carousel.dragging .card { /* cursore mano aperta su card */
     cursor: grab;
     user-select: none;
 }
@@ -206,8 +160,6 @@ body {
     height: 370px;
     list-style: none;
     background-color: #47762980; /* Sfondo bianco trasparente */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Supporto per Safari */
     border: 0.9px solid hwb(0 100% 0%);
     border-radius: 40px;
     display: flex;
@@ -224,7 +176,7 @@ body {
     
 }
 
-
+/* Colore delle card */
 .carousel .card:nth-child(1) {
     background-color: rgba(246, 193, 191, 0.834); 
 }
@@ -309,8 +261,6 @@ body {
 
 
 
-
-
 .card span {
     font-family: 'quicksand', sans-serif;
     display: block; /* Assicura che il sottotitolo occupi tutta la larghezza */
@@ -321,14 +271,13 @@ body {
 
 /* Stile della card espansa */
 .carousel .card.expanded {
-    width: 98%; /* Occupa tutta la larghezza disponibile */
+    width: 100%; /* Occupa tutta la larghezza disponibile */
     height: 520px; /* Altezza aumentata */
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
 
 }
 
 
-/* Stile pulsanti card */
 
 /* Contenitore del pulsante */
 .container {
@@ -337,13 +286,12 @@ body {
     align-items: center; /* Centra gli elementi verticalmente, se necessario */
     width: 100%; /* Assicurati che il contenitore occupi tutta la larghezza disponibile */
 }
-
+/* PULSANTE */
 .styled-button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-  
     padding: 11px 20px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -373,6 +321,13 @@ body {
     width: 20px; /* Regola la dimensione dell'icona */
     height: 20px;
     fill: white;
+}
+
+.booking-button span {
+    position: absolute;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
 }
 
 
@@ -406,14 +361,6 @@ body {
 .product-list li {
     font-size: 12px;
     margin: 5px 0;
-}
-
-
-.booking-button span {
-    position: absolute;
-    color: #000000;
-    font-size: 16px;
-    text-align: center;
 }
 
 
@@ -510,8 +457,8 @@ body {
 }
 
 .body-text {
-    font-size: 13px;
-    font-family: inherit; /* Usa il font del resto della pagina */
+    font-size: 14px;
+    font-family: 'quicksand', sans-serif;
     text-align: center;
     max-width: 90%;
     margin: 0 auto; /* Centra orizzontalmente */
@@ -530,7 +477,6 @@ footer {
     align-items: center;
     justify-content: center; /* Centra il contenuto orizzontalmente */
     padding: 15px 30px;
-    backdrop-filter: blur(0px); /* Effetto blur leggero */
     background-color: rgba(255, 255, 255, 0); /* Trasparenza */
     position: fixed;
     bottom: 0;
@@ -546,7 +492,7 @@ color: rgba(21, 19, 41, 0.848);
 }   
 
 .language-selector-footer {
-    font-size: 12px;
+    font-size: 11px;
     color: rgba(21, 19, 41, 0.848);
     }   
 
