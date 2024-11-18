@@ -178,7 +178,7 @@ body {
 
 /* Colore delle card */
 .carousel .card:nth-child(1) {
-    background-color: rgba(210,178,146,255); 
+    background-color: rgba(164, 121, 78, 0.764); 
 }
 
 .carousel .card:nth-child(2) {
