@@ -644,9 +644,14 @@ button[type="submit"]:hover {
 
 }
 
+.icon-back {
+    width: 24px; /* Definisci dimensione esplicita */
+    height: auto;
+}
+
 .round-button {
-    width: 50px; /* Dimensione fissa del pulsante */
-    height: 50px;
+    width: 40px; /* Dimensione fissa del pulsante */
+    height: 40px;
     border-radius: 50%;
     background-color: #e65252d4; /* Colore di sfondo */
     color: #fceee9; /* Colore del testo/icone */
