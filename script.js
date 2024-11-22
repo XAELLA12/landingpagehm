@@ -97,6 +97,23 @@ function toggleBodyText(visible) {
     "product.tozzetti": "Tozzetti and Vinosanto",
     "product.price": "Price per person: 95€",
 
+    "product.relaxReasons": "If you arrive after hours of traveling to reach us, if you are already our guest and return home after long walks, if you want to relax because you are on holiday!",
+    "product.proposal": "Look at our proposal and if you want to add something, we'll take care of it!",
+    "product.curedMeats": "Selection of cured meats",
+    "product.parmigiano": "Parmiggiano Reggiano",
+    "product.buffaloMozzarella": "Buffalo Mozzarella",
+    "product.whitePizza": "White Pizza",
+    "product.bruschettaMix": "Bruschetta mix",
+    "product.romanFriedFoods": "Typical Roman fried foods",
+    "product.bubbles": "Bubbles",
+    "product.cocktails": "Cocktails to be agreed together",
+    "product.startingPrice65": "Starting from 65€",
+
+    "product.guideExperience": "Our local guide will lead you through the most authentic alleys to taste the delicacies of the oldest bakeries, the most prestigious delicatessens and wine bars offering the best natural wines ever",
+    "product.hiddenAlleys": "We will cross the most hidden alleys of the historic center and its famous squares, telling you what happened on our streets over 2000 years ago!",
+    "product.estimatedTime": "Estimated tour time: 3.5 hours",
+    "product.pricePerPerson": "Price per Person 90€",
+
 
         },
         it: {
@@ -134,6 +151,23 @@ function toggleBodyText(visible) {
     "product.tiramisu": "Tiramisù",
     "product.tozzetti": "Tozzetti e Vinosanto",
     "product.price": "Prezzo per persona: 95€",
+
+    "product.relaxReasons": "Se arrivate dopo ore di viaggio, se siete già nostri ospiti e tornate a casa dopo lunghe passeggiate, se volete rilassarvi perché siete in vacanza!",
+    "product.proposal": "Guarda la nostra proposta e, se vuoi aggiungere qualcosa, ce ne occuperemo noi!",
+    "product.curedMeats": "Selezione di salumi",
+    "product.parmigiano": "Parmigiano Reggiano",
+    "product.buffaloMozzarella": "Mozzarella di bufala",
+    "product.whitePizza": "Pizza bianca",
+    "product.bruschettaMix": "Mix di bruschette",
+    "product.romanFriedFoods": "Fritti tipici romani",
+    "product.bubbles": "Bollicine",
+    "product.cocktails": "Cocktail da concordare insieme",
+    "product.startingPrice65": "A partire da 65€",
+
+    "product.guideExperience": "La nostra guida locale ti condurrà attraverso i vicoli più autentici per assaggiare le prelibatezze dei forni più antichi, delle gastronomie più prestigiose e delle enoteche che offrono i migliori vini naturali di sempre.",
+    "product.hiddenAlleys": "Attraverseremo i vicoli più nascosti del centro storico e delle sue piazze famose, raccontandoti cosa è successo nelle nostre strade oltre 2000 anni fa!",
+    "product.estimatedTime": "Durata stimata del tour: 3,5 ore",
+    "product.pricePerPerson": "Prezzo per persona 90€",
 
         }
     };
