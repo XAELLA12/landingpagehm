@@ -636,8 +636,8 @@ button[type="submit"]:hover {
 
 
 .round-button .arrow-icon {
-    width: 20px; /* Dimensione fissa dell'icona */
-    height: 20px;
+    width: 30px; /* Dimensione fissa dell'icona */
+    height: 30px;
     margin: 0 auto; /* Centra l'icona all'interno del pulsante */
     display: block;
     pointer-events: none; /* Assicura che il clic venga catturato dal pulsante e non dall'immagine */
@@ -668,7 +668,7 @@ button[type="submit"]:hover {
 }
 
 .round-button:hover {
-    transform: scale(1.1); /* Effetto ingrandimento */
+    transform: scale(1.05); /* Effetto ingrandimento */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
