@@ -82,7 +82,20 @@ function toggleBodyText(visible) {
     "product.buffaloMozzarella": "Buffalo Mozzarella",
     "product.whitePizza": "White pizza",
     "product.wineDonuts": "Wine donuts",
-    "product.startingPrice": "Starting from 50€"            
+    "product.startingPrice": "Starting from 50€",
+    
+    
+    "product.cultureFood": "This is the culture of food in Italy: sitting at the table, chatting, sharing life with good food and good wine, is fundamental for us!",
+    "product.romanDinner": "We will prepare a Roman dinner with dishes that represent our history, the deepest anecdotes in an unforgettable culinary journey. Look at our genuine menu proposal or write to us and we will create a tailor-made experience for you!",
+    "product.menuTitle": "Our Roman menu:",
+    "product.panzanella": "Roman Panzanella",
+    "product.suppli": "Supplì and courgette flowers",
+    "product.pastaTasting": "Tasting of pasta Carbonara and pasta Cacio e Pepe",
+    "product.tripe": "Tasting of Roman tripe",
+    "product.saltimbocca": "Tasting of Saltimbocca alla Romana",
+    "product.tiramisu": "Tiramisù",
+    "product.tozzetti": "Tozzetti and Vinosanto",
+    "product.price": "Price per person: 95€",
 
 
         },
@@ -108,7 +121,19 @@ function toggleBodyText(visible) {
     "product.buffaloMozzarella": "Mozzarella di Bufala",
     "product.whitePizza": "Pizza bianca",
     "product.wineDonuts": "Ciambelline al vino",
-    "product.startingPrice": "A partire da 50€"
+    "product.startingPrice": "A partire da 50€",
+
+    "product.cultureFood": "Questa è la cultura del cibo in Italia: sedersi a tavola, chiacchierare, condividere la vita con buon cibo e buon vino è fondamentale per noi!",
+    "product.romanDinner": "Prepariamo una cena romana con piatti che rappresentano la nostra storia, gli aneddoti più profondi in un viaggio culinario indimenticabile. Guarda la nostra proposta di menu genuino o scrivici e creeremo un'esperienza su misura per te!",
+    "product.menuTitle": "Il nostro menu romano:",
+    "product.panzanella": "Panzanella Romana",
+    "product.suppli": "Supplì e fiori di zucca",
+    "product.pastaTasting": "Assaggio di pasta Carbonara e pasta Cacio e Pepe",
+    "product.tripe": "Assaggio di trippa romana",
+    "product.saltimbocca": "Assaggio di Saltimbocca alla Romana",
+    "product.tiramisu": "Tiramisù",
+    "product.tozzetti": "Tozzetti e Vinosanto",
+    "product.price": "Prezzo per persona: 95€",
 
         }
     };
