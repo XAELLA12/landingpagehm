@@ -72,7 +72,7 @@ function toggleBodyText(visible) {
             "card2.description": "Your authentically Italian evening with us!",
             "card3.description": "Choose our aperitif designed specifically to let you savor our most authentic products with mind-boggling cocktails!",
             "card4.description": "Get ready to tour the city with the best food Rome has to offer!",
-           "card1.products-list": [
+           "card1.product-list": [
             "Choose our Box with the best local products to receive directly upon your arrival! Or text us a shopping list you wish, we'll take care of everything!",
             "Bottle of wine from our Region",
             "Tarallucci",
@@ -101,7 +101,7 @@ function toggleBodyText(visible) {
              "card2.description": "La tua autentica serata romana con noi!",
              "card3.description": "scegli il nostro aperitivo, pensato per farti assaporare i nostri prodotti tipici e i nostri cocktails !",
              "card4.description": "Preparati a scoprire la città con il miglior cibo che Roma ha da offrire!",
-             "card1.products-list": [
+             "card1.product-list": [
                 "Scegli la nostra Box con i migliori prodotti locali da ricevere direttamente al tuo arrivo! Oppure inviaci una lista della spesa che desideri, ci occuperemo di tutto noi!",
                 "Bottiglia di vino della nostra regione",
                 "Tarallucci",
