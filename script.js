@@ -72,20 +72,17 @@ function toggleBodyText(visible) {
             "card2.description": "Your authentically Italian evening with us!",
             "card3.description": "Choose our aperitif designed specifically to let you savor our most authentic products with mind-boggling cocktails!",
             "card4.description": "Get ready to tour the city with the best food Rome has to offer!",
-           "card1.product-list": [
-            "Choose our Box with the best local products to receive directly upon your arrival! Or text us a shopping list you wish, we'll take care of everything!",
-            "Bottle of wine from our Region",
-            "Tarallucci",
-            "Pecorino Cheese",
-            "Green Aperitif Olives",
-            "Selection of hams",
-            "Selection of salamis",
-            "Buffalo Mozzarella",
-            "White pizza",
-            "Wine donuts",
-            "Starting form 50€"
-        ],
-                        
+          "product.boxDescription": "Choose our Box with the best local products to receive directly upon your arrival! Or text us a shopping list you wish, we'll take care of everything!",
+    "product.wine": "Bottle of wine from our Region",
+    "product.tarallucci": "Tarallucci",
+    "product.pecorino": "Pecorino Cheese",
+    "product.olives": "Green Aperitif Olives",
+    "product.hams": "Selection of hams",
+    "product.salamis": "Selection of salamis",
+    "product.buffaloMozzarella": "Buffalo Mozzarella",
+    "product.whitePizza": "White pizza",
+    "product.wineDonuts": "Wine donuts",
+    "product.startingPrice": "Starting from 50€"            
 
 
         },
@@ -101,19 +98,17 @@ function toggleBodyText(visible) {
              "card2.description": "La tua autentica serata romana con noi!",
              "card3.description": "scegli il nostro aperitivo, pensato per farti assaporare i nostri prodotti tipici e i nostri cocktails !",
              "card4.description": "Preparati a scoprire la città con il miglior cibo che Roma ha da offrire!",
-             "card1.product-list": [
-                "Scegli la nostra Box con i migliori prodotti locali da ricevere direttamente al tuo arrivo! Oppure inviaci una lista della spesa che desideri, ci occuperemo di tutto noi!",
-                "Bottiglia di vino della nostra regione",
-                "Tarallucci",
-                "Formaggio Pecorino",
-                "Olive verdi",
-                "Selezione di prosciutti",
-                "Selezioni di salami",
-                "Mozzarella di Bufala",
-                "WPizza bianca",
-                "Ciambelline al vino",
-                "A partire da 50€"
-            ],
+             "product.boxDescription": "Scegli la nostra scatola con i migliori prodotti locali da ricevere direttamente al tuo arrivo! Oppure inviaci una lista della spesa e penseremo a tutto noi!",
+    "product.wine": "Bottiglia di vino della nostra regione",
+    "product.tarallucci": "Tarallucci",
+    "product.pecorino": "Formaggio Pecorino",
+    "product.olives": "Olive per aperitivo verdi",
+    "product.hams": "Selezione di prosciutti",
+    "product.salamis": "Selezione di salami",
+    "product.buffaloMozzarella": "Mozzarella di Bufala",
+    "product.whitePizza": "Pizza bianca",
+    "product.wineDonuts": "Ciambelline al vino",
+    "product.startingPrice": "A partire da 50€"
 
         }
     };
