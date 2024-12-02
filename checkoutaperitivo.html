@@ -88,7 +88,7 @@
                 </div>
 
                 <!-- Pulsante di invio -->
-                <button type="submit" id="button" data-i18n="form.submit">Request your Aperitif!</button>
+                <button type="submit" id="button" data-i18n="form.submit">Book your Aperitif!</button>
             
             </form>
             
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "form.allergen": "Allergen",
             "form.people": "How many?",
             "form.total": "Total",
-            "form.submit": "Request your Aperitif!",
+            "form.submit": "Book your Aperitif!",
             "form.confirmation": "Your reservation has been successfully submitted! You will be contacted shortly via email to confirm your order.",
             "form.back": "Back",
             "footer.language": "Language:"
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                button.textContent = 'Request your service!';
+                button.textContent = 'Book your service!';
                 form.style.display = "none";
                 title.style.display = "none";
                 confirmationMessage.style.display = "block";
@@ -260,7 +260,7 @@ document.body.style.transform = "scale(1)";
 document.body.style.transformOrigin = "0 0";
 
         }, (err) => {
-            button.textContent = 'Request your service!';
+            button.textContent = 'Book your service!';
             alert("Error: " + JSON.stringify(err));
         })
         .finally(() => {
